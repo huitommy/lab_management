@@ -1,0 +1,13 @@
+<h1> <%= @vendor.name %> </h1>
+<h3> Phone Number:</h3>
+<h4> <%= @vendor.telephone %> </h4>
+<h3> Address: </h3>
+<h4> <%= @vendor.address %> </h4>
+<h4> <%= @vendor.city %>, <%= @vendor.state %> <%= @vendor.zipcode %> </h4>
+<h3> Website: </h3>
+<h4> <a href="<%= @vendor.webpage %>"> <%= @vendor.webpage %> </a> </h4>
+
+<%= button_to "Edit", edit_vendor_path(@vendor), method: :get %>
+<%= button_to "Delete", vendor_path(@vendor), method: :delete, data: { confirm: "Are you sure you want to remove this vendor?" } %>
+<br />
+<%= link_to "Return back to list of vendors", vendors_path %>

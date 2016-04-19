@@ -1,0 +1,7 @@
+<h1>List of Vendors</h1>
+
+<% @vendors.each do |vendor| %>
+  <p> <%= link_to vendor.name, vendor_path(vendor) %> </p>
+<% end %>
+
+<%= button_to "Add a new vendor", new_vendor_path, method: :get %>

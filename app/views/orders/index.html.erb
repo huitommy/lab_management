@@ -1,0 +1,26 @@
+<h1> List of Orders </h1>
+
+<table border="1" style="width:100%">
+  <tr>
+    <th> Catalogue # </th>
+    <th> Product Name </th>
+    <th> Vendor Name </th>
+    <th> Quantity </th>
+    <th> URL </th>
+    <th> Request by </th>
+    <th> Ordered?</th>
+    <th> Order Method: </th>
+  </tr>
+  <% @orders.each do |order| %>
+  <tr>
+    <th> <%= order.cat_number %> </th>
+    <th> <%= order.product_name %> </th>
+    <th> <%= order.vendor.name %> </th>
+    <th> <%= order.quantity %> </th>
+    <th> <%= order.url %> </th>
+    <th> <%= order.user.username %> </th>
+    <th> <%= order.ordered %> </th>
+    <th> <%= order.order_placed %></th>
+  </tr>
+  <% end %>
+</table>
