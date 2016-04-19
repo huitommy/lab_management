@@ -1,5 +1,6 @@
-class OrdersController < ApplicationController
+class OrdersController < PermissionsController
   before_action :authenticate_user!
+  before_filter :require_permission, only: [:edit, :destroy]
 
   def index
     @orders = Order.all
@@ -7,6 +8,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @access = current_user = @user || current_user.admin?
   end
 
   def new
@@ -14,7 +16,7 @@ class OrdersController < ApplicationController
   end
 
   def create
-    @order = Order.new(order_params)
+    @Order = current_user.order.build(order_params)
     if @order.save
       flash[:notice] = "You have added the order successfully"
       redirect_to order_path(@order)
