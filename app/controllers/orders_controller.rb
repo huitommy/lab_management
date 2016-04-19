@@ -16,7 +16,7 @@ class OrdersController < PermissionsController
   end
 
   def create
-    @Order = current_user.order.build(order_params)
+    @Order = current_user.orders.build(order_params)
     if @order.save
       flash[:notice] = "You have added the order successfully"
       redirect_to order_path(@order)
