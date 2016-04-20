@@ -16,7 +16,7 @@
     <tr>
       <th> <%= order.cat_number %> </th>
       <th> <%= link_to "#{order.product_name}", order_path(order) %> </th>
-      <th> <%= order.vendor.name %> </th>
+      <th> <%= link_to "#{order.vendor.name}", vendor_path(order.vendor) %> </th>
       <th> <%= order.quantity %> </th>
       <th> <%= order.url %> </th>
       <th> <%= order.user.username %> </th>
