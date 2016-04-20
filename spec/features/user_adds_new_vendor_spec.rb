@@ -16,7 +16,7 @@ feature 'User adds new vendor' do
       fill_in 'Name', with: 'test'
       fill_in 'Address', with: 'test street'
       fill_in 'City', with: 'test city'
-      fill_in 'State', with: 'ta'
+      select 'MA', from: 'State'
       fill_in 'Zip Code', with: '02142'
       fill_in 'Telephone', with: '2337423773'
       click_on 'Create Vendor'
@@ -29,14 +29,14 @@ feature 'User adds new vendor' do
       click_link 'New Vendor'
       fill_in 'Address', with: 'test street'
       fill_in 'City', with: 'teston'
-      fill_in 'State', with: 'ta'
+      select 'MA', from: 'State'
       fill_in 'Zip Code', with: '02142'
       click_on 'Create Vendor'
 
       expect(page).to have_content("Name can't be blank")
       expect(page).to_not have_content('test')
       expect(page).to have_selector("input[value='test street']")
-      expect(page).to have_selector("input[value='ta']")
+      expect(page).to have_selector("input[value='MA']")
       expect(page).to have_selector("input[value ='02142']")
     end
   end
