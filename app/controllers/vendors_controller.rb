@@ -15,6 +15,7 @@ class VendorsController < PermissionsController
   end
 
   def create
+    @states = Vendor::STATES
     @vendor = Vendor.new(vendor_params)
     if @vendor.save
       flash[:notice] = "You have added the vendor successfully"
@@ -31,6 +32,7 @@ class VendorsController < PermissionsController
   end
 
   def update
+    @states = Vendor::STATES
     @vendor = Vendor.find(params[:id])
     if @vendor.update(vendor_params)
       flash[:notice] = "You have added the vendor successfully"
