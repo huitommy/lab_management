@@ -23,8 +23,9 @@ ActiveRecord::Schema.define(version: 20160419170618) do
     t.datetime "updated_at",                   null: false
     t.integer  "quantity",                     null: false
     t.string   "cat_number",                   null: false
-    t.string   "order_placed",                 null: false
+    t.string   "order_placed"
     t.string   "url"
+    t.string   "price",                        null: false
     t.string   "product_name",                 null: false
     t.boolean  "ordered",      default: false
   end

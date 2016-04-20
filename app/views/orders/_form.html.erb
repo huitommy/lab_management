@@ -1,0 +1,39 @@
+<%= form_for(@order) do |f| %>
+
+  <div class="row">
+     <%= f.label :vendor_id, "Vendor:" %>
+     <%= f.select :vendor_id, options_from_collection_for_select(Vendor.all, :id, :name) %>
+  </div>
+
+  <div class="field">
+    <%= f.label :cat_number %><br>
+    <%= f.text_field :cat_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :product_name %><br>
+    <%= f.text_field :product_name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url, "URL" %><br>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
+
+<br />
+<%= link_to "Return back to list of orders", orders_path %>
