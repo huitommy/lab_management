@@ -2,7 +2,7 @@ class VendorsController < PermissionsController
   before_action :authenticate_user!
 
   def index
-    @vendors = Vendor.all
+    @vendors = Vendor.all.order(name: :asc)
   end
 
   def show
@@ -10,10 +10,12 @@ class VendorsController < PermissionsController
   end
 
   def new
+    @states = Vendor::STATES
     @vendor = Vendor.new
   end
 
   def create
+    @states = Vendor::STATES
     @vendor = Vendor.new(vendor_params)
     if @vendor.save
       flash[:notice] = "You have added the vendor successfully"
@@ -25,10 +27,12 @@ class VendorsController < PermissionsController
   end
 
   def edit
+    @states = Vendor::STATES
     @vendor = Vendor.find(params[:id])
   end
 
   def update
+    @states = Vendor::STATES
     @vendor = Vendor.find(params[:id])
     if @vendor.update(vendor_params)
       flash[:notice] = "You have added the vendor successfully"

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User adds new vendor' do
+feature 'User adds new vendor:' do
 
   context "user is signed in" do
     before(:each) do
@@ -16,7 +16,7 @@ feature 'User adds new vendor' do
       fill_in 'Name', with: 'test'
       fill_in 'Address', with: 'test street'
       fill_in 'City', with: 'test city'
-      fill_in 'State', with: 'ta'
+      select 'Massachusetts', from: 'State'
       fill_in 'Zip Code', with: '02142'
       fill_in 'Telephone', with: '2337423773'
       click_on 'Create Vendor'
@@ -25,18 +25,17 @@ feature 'User adds new vendor' do
       expect(page).to have_content('test')
     end
 
-    scenario 'User visits page with new elevader form and fills out incorrectly' do
+    scenario 'User visits page with new vendor form and fills out incorrectly' do
       click_link 'New Vendor'
       fill_in 'Address', with: 'test street'
       fill_in 'City', with: 'teston'
-      fill_in 'State', with: 'ta'
+      select 'Massachusetts', from: 'State'
       fill_in 'Zip Code', with: '02142'
       click_on 'Create Vendor'
 
       expect(page).to have_content("Name can't be blank")
       expect(page).to_not have_content('test')
       expect(page).to have_selector("input[value='test street']")
-      expect(page).to have_selector("input[value='ta']")
       expect(page).to have_selector("input[value ='02142']")
     end
   end
