@@ -1,4 +1,4 @@
-class VendorsController < ApplicationController
+class VendorsController < PermissionsController
   before_action :authenticate_user!
 
   def index
@@ -20,7 +20,7 @@ class VendorsController < ApplicationController
       redirect_to vendor_path(@vendor)
     else
       flash[:alert] = @vendor.errors.full_messages.join(". ")
-      render 'vendor/show'
+      render new_vendor_path
     end
   end
 

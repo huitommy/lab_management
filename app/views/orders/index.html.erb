@@ -11,16 +11,18 @@
     <th> Ordered?</th>
     <th> Order Method: </th>
   </tr>
-  <% @orders.each do |order| %>
-  <tr>
-    <th> <%= order.cat_number %> </th>
-    <th> <%= order.product_name %> </th>
-    <th> <%= order.vendor.name %> </th>
-    <th> <%= order.quantity %> </th>
-    <th> <%= order.url %> </th>
-    <th> <%= order.user.username %> </th>
-    <th> <%= order.ordered %> </th>
-    <th> <%= order.order_placed %></th>
-  </tr>
-  <% end %>
+  <div>
+    <% @orders.each do |order| %>
+    <tr>
+      <th> <%= order.cat_number %> </th>
+      <th> <%= link_to "#{order.product_name}", order_path(order) %> </th>
+      <th> <%= order.vendor.name %> </th>
+      <th> <%= order.quantity %> </th>
+      <th> <%= order.url %> </th>
+      <th> <%= order.user.username %> </th>
+      <th> <%= order.ordered %> </th>
+      <th> <%= order.order_placed %></th>
+    </tr>
+    <% end %>
+  </div>
 </table>

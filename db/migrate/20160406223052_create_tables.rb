@@ -16,8 +16,9 @@ class CreateTables < ActiveRecord::Migration
       t.timestamps null: false
       t.integer :quantity, null: false
       t.string :cat_number, null: false
-      t.string :order_placed, null: false
+      t.string :order_placed
       t.string :url
+      t.string :price, null: false
       t.string :product_name, null: false
       t.boolean :ordered, default: false
     end

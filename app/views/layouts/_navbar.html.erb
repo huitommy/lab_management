@@ -1,22 +1,31 @@
-<div class="contain-to-grid small-12">
-  <nav class="top-bar" data-topbar role="navigation" data-options="sticky_on: small">
-    <ul class="title-area small-3">
-      <li class="name">
-        <h1><%= link_to "LabSolutions", root_path %></h1>
-          <img src="/assets/logo.png" />
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="menu">
+      <li class="menu align-left">
+        <img src="/assets/logo.png" />
       </li>
-    </ul
+      <li class="menu-title">
+        <a href="/">LabSolutions</a>
+      </li>
+    </ul>
 
-    <div class="top-bar-section small-8" id="nav-buttons">
-      <ul class="right button-group">
-        <% if current_user || current_user.try(:admin?) %>
-          <li><%= link_to "Profile", edit_user_registration_path, id: 'nav-button' %></li>
-          <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
-        <% else %>
-          <li><%= link_to "Sign In", new_user_session_path %></li>
-          <li><%= link_to "Sign Up", new_user_registration_path %></li>
+  </div>
+
+  <div class="top-bar-right">
+    <ul class="menu align-right">
+      <% if current_user || current_user.try(:admin?) %>
+        <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
+        <li><%= link_to "Profile", edit_user_registration_path %></li>
+        <% if !Vendor.all.empty? %>
+          <li><%= link_to "New Order Request", new_order_path %></li>
         <% end %>
-      </ul>
-    </div>
-  </nav>
+        <li><%= link_to "New Vendor", new_vendor_path %></li>
+
+      <% else %>
+        <li><%= link_to "Sign Up", new_user_registration_path %></li>
+        <li><%= link_to "Sign In", new_user_session_path %></li>
+      <% end %>
+    </ul>
+  </div>
+
 </div>
