@@ -8,21 +8,21 @@ FactoryGirl.define do
   end
 
   factory :vendor do
-    name "#{Faker::Commerce.product_name}"
-    address "#{Faker::Address.street_address}"
-    city "#{Faker::Address.city}"
-    state "#{Faker::Address.state}"
-    zipcode "#{Faker::Number.number(5)}"
-    telephone "#{Faker::PhoneNumber.cell_phone}"
+    name "VWR"
+    address "10 Address"
+    city "City"
+    state "MA"
+    zipcode "02111"
+    telephone "6176176171"
   end
 
   factory :order do
     vendor
     user
     quantity "1"
-    cat_number "#{Faker::Number.number(5)}"
-    url "#{Faker::Internet.url}"
+    cat_number "ABC123"
+    url "http://www.google.com"
     price "100"
-    product_name "#{Faker::Commerce.product_name}"
+    product_name "product"
   end
 end

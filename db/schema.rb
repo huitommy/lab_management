@@ -16,18 +16,22 @@ ActiveRecord::Schema.define(version: 20160419170618) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
+  create_table "items", force: :cascade do |t|
+    t.integer "order_id",     null: false
+    t.integer "quantity",     null: false
+    t.string  "cat_number",   null: false
+    t.string  "url"
+    t.decimal "price",        null: false
+    t.string  "product_name", null: false
+  end
+
   create_table "orders", force: :cascade do |t|
-    t.integer  "vendor_id",                    null: false
-    t.integer  "user_id",                      null: false
-    t.datetime "created_at",                   null: false
-    t.datetime "updated_at",                   null: false
-    t.integer  "quantity",                     null: false
-    t.string   "cat_number",                   null: false
-    t.string   "order_placed"
-    t.string   "url"
-    t.string   "price",                        null: false
-    t.string   "product_name",                 null: false
-    t.boolean  "ordered",      default: false
+    t.integer  "vendor_id",                  null: false
+    t.integer  "user_id",                    null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.string   "po_number"
+    t.boolean  "ordered",    default: false
   end
 
   create_table "users", force: :cascade do |t|

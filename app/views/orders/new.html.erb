@@ -1,2 +1,15 @@
 <h1>Create New Order Request</h1>
-<%= render 'form' %>
+
+<%= form_for(@order) do |f| %>
+  <div class="row">
+     <%= f.label :vendor_id, "Vendor:" %>
+     <%= f.select :vendor_id, options_from_collection_for_select(Vendor.all, :id, :name) %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+  
+  <br />
+  <%= link_to "Back to orders", orders_path %>
+<% end %>

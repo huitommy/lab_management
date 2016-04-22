@@ -1,10 +1,4 @@
-<%= form_for(@order) do |f| %>
-
-  <div class="row">
-     <%= f.label :vendor_id, "Vendor:" %>
-     <%= f.select :vendor_id, options_from_collection_for_select(Vendor.all, :id, :name) %>
-  </div>
-
+<%= form_for (@item) do |f| %>
   <div class="field">
     <%= f.label :cat_number %><br>
     <%= f.text_field :cat_number %>
@@ -14,7 +8,6 @@
     <%= f.label :product_name %><br>
     <%= f.text_field :product_name %>
   </div>
-
   <div class="field">
     <%= f.label :quantity %><br>
     <%= f.text_field :quantity %>
@@ -31,9 +24,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Update Item" %>
   </div>
 <% end %>
-
-<br />
-<%= link_to "Return back to list of orders", orders_path %>

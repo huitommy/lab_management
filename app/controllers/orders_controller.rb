@@ -9,6 +9,8 @@ class OrdersController < PermissionsController
   def show
     current_user
     @order = Order.find(params[:id])
+    @item = Item.new
+    @items = @order.items
     @user = @order.user
     @access = current_user == @user || current_user.admin
   end
@@ -20,7 +22,7 @@ class OrdersController < PermissionsController
   def create
     @order = current_user.orders.build(order_params)
     if @order.save
-      flash[:notice] = "You have added the order successfully"
+      flash[:notice] = "You have created the order request successfully"
       redirect_to order_path(@order)
     else
       flash[:alert] = @order.errors.full_messages.join(". ")
@@ -30,13 +32,14 @@ class OrdersController < PermissionsController
 
   def edit
     @order = Order.find(params[:id])
+    @items = @order.items
     @user = @order.user
   end
 
   def update
     @order = Order.find(params[:id])
     if @order.update(order_params)
-      flash[:notice] = "You have added the order successfully"
+      flash[:notice] = "You updated the order request successfully"
       redirect_to order_path(@order)
     else
       flash[:alert] = @order.errors.full_messages.join(". ")
@@ -48,13 +51,13 @@ class OrdersController < PermissionsController
     @order = Order.find(params[:id])
     @user = @order.user
     @order.destroy
-    flash[:notice] = "You have added the order successfully"
+    flash[:notice] = "You have deleted the order request successfully"
     redirect_to orders_path
   end
 
   private
 
   def order_params
-    params.require(:order).permit(:vendor_id, :user_id, :quantity, :cat_number, :url, :product_name, :webpage, :price)
+    params.require(:order).permit(:vendor_id, :user_id, :po_number, :ordered, :total_price)
   end
 end

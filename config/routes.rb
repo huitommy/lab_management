@@ -8,5 +8,8 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: [:index]
   resources :vendors
-  resources :orders
+  resources :orders do
+    resources :items, only: [:create]
+  end
+  resources :items, only: [:edit, :update, :destroy]
 end
