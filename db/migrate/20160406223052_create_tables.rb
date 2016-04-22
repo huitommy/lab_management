@@ -14,13 +14,17 @@ class CreateTables < ActiveRecord::Migration
       t.belongs_to :vendor, null: false
       t.belongs_to :user, null: false
       t.timestamps null: false
+      t.string :po_number
+      t.boolean :ordered, default: false
+    end
+
+    create_table :items do |t|
+      t.belongs_to :order, null: false
       t.integer :quantity, null: false
       t.string :cat_number, null: false
-      t.string :order_placed
       t.string :url
-      t.string :price, null: false
+      t.decimal :price, null: false
       t.string :product_name, null: false
-      t.boolean :ordered, default: false
     end
   end
 end

@@ -1,11 +1,52 @@
-<div class="small-12 columns">
-  <p>Product: <%= @order.product_name %></p>
-  <p>Catalogue #: <%= @order.cat_number %></p>
-  <p>QTY: <%= @order.quantity %></p>
-  <p>Price: <%= @order.price %></p>
-  <p>URL: <%= @order.url %></p>
-</div>
+<h3>Order # <%= @order.id %> </h3>
+<h4> <%= @order.vendor.name %> </h4>
 
+<ul>
+  <% @items.each_with_index do |item, index|%>
+    <li>Item# <%= index + 1 %></li>
+    <ul>
+      <li> <%= item.product_name %> </li>
+      <li> Cat # <%= item.cat_number %> </li>
+      <li> QTY: <%= item.quantity %> </li>
+      <li> Price: <%= '%.2f' % item.price %> </li>
+      <li> URL: <%= item.url %> </li>
+    </ul>
+      <%= link_to "Edit Item", edit_item_path(item) %>
+      <%= link_to "Delete Item", item, method: :delete %>
+  <% end %>
+</ul>
+
+<%= form_for [@order, @item] do |f| %>
+  <div class="field">
+    <%= f.label :cat_number %><br>
+    <%= f.text_field :cat_number %>
+  </div>
+
+  <div class="field">
+    <%= f.label :product_name %><br>
+    <%= f.text_field :product_name %>
+  </div>
+  <div class="field">
+    <%= f.label :quantity %><br>
+    <%= f.text_field :quantity %>
+  </div>
+
+  <div class="field">
+    <%= f.label :price %><br>
+    <%= f.text_field :price %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url, "URL" %><br>
+    <%= f.text_field :url %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Add Item" %>
+  </div>
+<% end %>
+
+<br />
 <% if @access %>
   <%= button_to "Edit", edit_order_path(@order), method: :get %>
   <%= button_to "Delete", order_path(@order), method: :delete, data: { confirm: "Are you sure you want to remove this order?" } %>

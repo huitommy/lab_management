@@ -2,26 +2,24 @@
 
 <table border="1" style="width:100%" class="sortable">
   <tr>
-    <th> Catalogue # </th>
-    <th> Product Name </th>
-    <th> Vendor Name </th>
-    <th> Quantity </th>
-    <th> URL </th>
-    <th> Request by </th>
-    <th> Ordered?</th>
-    <th> Order Method: </th>
+    <th> Order #</th>
+    <th> Vendor </th>
+    <th> Requested by: </th>
+    <th> Total Price </th>
+    <th> Date Requested: </th>
   </tr>
   <div>
     <% @orders.each do |order| %>
     <tr>
-      <th> <%= order.cat_number %> </th>
-      <th> <%= link_to "#{order.product_name}", order_path(order) %> </th>
-      <th> <%= link_to "#{order.vendor.name}", vendor_path(order.vendor) %> </th>
-      <th> <%= order.quantity %> </th>
-      <th> <%= order.url %> </th>
+      <th> <%= order.id %> </th>
+      <th> <%= link_to "#{order.vendor.name}", order_path(order) %> </th>
       <th> <%= order.user.username %> </th>
-      <th> <%= order.ordered %> </th>
-      <th> <%= order.order_placed %></th>
+      <% @total_price = 0 %>
+      <% order.items.each do |item| %>
+        <% @total_price += (item.quantity * item.price) %>
+      <% end %>
+      <th> $<%= '%.2f' %  @total_price %> </th>
+      <th> <%= order.created_at.in_time_zone('EST').strftime('%m-%e-%y')%> </th>
     </tr>
     <% end %>
   </div>
