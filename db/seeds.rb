@@ -13,7 +13,6 @@ vendors.each do |name|
   FactoryGirl.create(:vendor, name: name)
 end
 
-
 50.times do
   user = FactoryGirl.create(:user)
   vendor = Vendor.all.sample

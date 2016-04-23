@@ -4,14 +4,14 @@ feature 'Search bar:' do
 
   before(:each) do
     v1 = FactoryGirl.create(:vendor, name: 'VWR')
-    v2= FactoryGirl.create(:vendor, name: 'Fisher Scientific')
-    v3= FactoryGirl.create(:vendor, name: 'Sigma Aldrich')
+    v2 = FactoryGirl.create(:vendor, name: 'Fisher Scientific')
+    v3 = FactoryGirl.create(:vendor, name: 'Sigma Aldrich')
     vwr = FactoryGirl.create(:order, vendor: v1)
     fisher = FactoryGirl.create(:order, vendor: v2)
     sigma = FactoryGirl.create(:order, vendor: v3)
     FactoryGirl.create(:item, product_name: "test tube", order: vwr)
     FactoryGirl.create(:item, product_name: "pipette", order: sigma)
-    FactoryGirl.create(:item, product_name: "beaker", order: fisher )
+    FactoryGirl.create(:item, product_name: "beaker", order: fisher)
   end
 
   context 'user is signed in:' do
