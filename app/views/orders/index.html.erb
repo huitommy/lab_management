@@ -19,7 +19,7 @@
         <% @total_price += (item.quantity * item.price) %>
       <% end %>
       <th> $<%= '%.2f' %  @total_price %> </th>
-      <th> <%= order.created_at.in_time_zone('EST').strftime('%m-%e-%y')%> </th>
+      <th> <%= order.created_at.strftime('%m-%e-%y')%> </th>
     </tr>
     <% end %>
   </div>
