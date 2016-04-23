@@ -56,7 +56,7 @@ class OrdersController < PermissionsController
   end
 
   def search
-    @orders =  Order.search(params[:query])
+    @orders = Order.search(params[:query])
     if @orders.empty?
       flash[:alert] = "Sorry, but we couldn't find any orders matching '#{params[:query]}'"
     end
