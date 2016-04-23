@@ -9,7 +9,7 @@
       <li> Cat # <%= item.cat_number %> </li>
       <li> QTY: <%= item.quantity %> </li>
       <li> Price: <%= '%.2f' % item.price %> </li>
-      <li> URL: <%= item.url %> </li>
+      <li> URL: <a href="<%= item.url %>"  target="_blank"><%= item.url %></a> </li>
     </ul>
       <%= link_to "Edit Item", edit_item_path(item) %>
       <%= link_to "Delete Item", item, method: :delete %>

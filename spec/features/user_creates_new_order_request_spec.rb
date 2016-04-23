@@ -2,7 +2,7 @@ require 'rails_helper'
 
 feature 'User creates new order request' do
 
-  context "user is signed in" do
+  context 'user is signed in' do
     before(:each) do
       FactoryGirl.create(:vendor, name: 'vendor1')
       FactoryGirl.create(:vendor, name: 'vendor2')

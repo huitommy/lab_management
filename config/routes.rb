@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   resources :dashboard, only: [:index]
   resources :vendors
   resources :orders do
+    collection do
+      get 'search'
+    end
     resources :items, only: [:create]
   end
   resources :items, only: [:edit, :update, :destroy]

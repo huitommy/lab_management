@@ -1,5 +1,5 @@
 <div class="top-bar">
-  <div class="top-bar-left">
+  <div class="top-bar-left large-12 medium-6 small-3 row">
     <ul class="menu">
       <li class="menu align-left">
         <img src="/assets/logo.png" />
@@ -7,8 +7,17 @@
       <li class="menu-title">
         <a href="/">LabSolutions</a>
       </li>
+      <li>
+        <%= form_tag search_orders_path, method: :get do %>
+      <div class="small-1 columns">
+        <%= text_field_tag :query, params[:query] %>
+      </div>
+      <div class="small-6 columns">
+        <%= submit_tag "Search Orders", class: "button searchbutton", id: "searchbutton" %>
+        <% end %>
+      </div>
+      </li>
     </ul>
-
   </div>
 
   <div class="top-bar-right">
