@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :activities
   devise_for :users
   authenticated :user do
     root to: "dashboard#index", as: "authenticated_root"
