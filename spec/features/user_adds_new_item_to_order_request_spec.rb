@@ -6,24 +6,16 @@ feature 'User adds new item to order request' do
     before(:each) do
       FactoryGirl.create(:vendor, name: 'vendor1')
       FactoryGirl.create(:vendor, name: 'vendor2')
-      FactoryGirl.create(:user, username: 'labtech', email: 'labtech@email.com')
-      FactoryGirl.create(:user, username: 'labtech1', email: 'labtech1@email.com')
-      visit new_user_session_path
-      fill_in 'Login', with: 'labtech@email.com'
-      fill_in 'Password', with: 'password'
-      click_on 'Log in'
+      @user1 = FactoryGirl.create(:user, username: 'labtech', email: 'labtech@email.com')
+      @user2 = FactoryGirl.create(:user, username: 'labtech1', email: 'labtech1@email.com')
+      sign_in_as(@user1)
       click_on 'New Order Request'
       select 'vendor1', from: 'Vendor:'
       click_on 'Create Order'
     end
 
     scenario 'adds an item after creating a new order request' do
-      fill_in 'Cat number', with: 'ABC123'
-      fill_in 'Product name', with: 'Test Product'
-      fill_in 'Quantity', with: '2'
-      fill_in 'Price', with: '15.25'
-      fill_in 'URL', with: 'http://www.google.com'
-      click_on 'Add Item'
+      fill_in_order
 
       expect(page).to have_content('Item Added!')
       expect(page).to have_content('ABC123')
@@ -36,12 +28,7 @@ feature 'User adds new item to order request' do
     scenario 'adds an item to exisiting order request' do
       visit orders_path
       click_on 'vendor1'
-      fill_in 'Cat number', with: 'ABC123'
-      fill_in 'Product name', with: 'Test Product'
-      fill_in 'Quantity', with: '2'
-      fill_in 'Price', with: '15.25'
-      fill_in 'URL', with: 'http://www.google.com'
-      click_on 'Add Item'
+      fill_in_order
 
       expect(page).to have_content('Item Added!')
       expect(page).to have_content('ABC123')
@@ -53,18 +40,10 @@ feature 'User adds new item to order request' do
 
     scenario "any user can add items to an exisiting order request as long as it's not marked as 'ordered'" do
       click_on 'Sign Out'
-      visit new_user_session_path
-      fill_in 'Login', with: 'labtech1'
-      fill_in 'Password', with: 'password'
-      click_on 'Log in'
+      sign_in_as(@user2)
       click_on 'List of Orders'
       click_on 'vendor1'
-      fill_in 'Cat number', with: 'ABC123'
-      fill_in 'Product name', with: 'Test Product'
-      fill_in 'Quantity', with: '2'
-      fill_in 'Price', with: '15.25'
-      fill_in 'URL', with: 'http://www.google.com'
-      click_on 'Add Item'
+      fill_in_order
 
       expect(page).to have_content('Item Added!')
       expect(page).to have_content('ABC123')

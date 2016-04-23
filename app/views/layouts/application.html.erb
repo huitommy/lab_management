@@ -7,7 +7,6 @@
     <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
     <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
   </head>
 
@@ -17,11 +16,12 @@
     <div class="row">
       <div class="container">
         <div class="column">
-          <div class="small-11 medium-9 large-7 columns">
+          <div class="small-6 medium-9 large-12 columns">
             <%= yield %>
           </div>
         </div>
       </div>
     </div>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
   </body>
 </html>

@@ -19,10 +19,14 @@ FactoryGirl.define do
   factory :order do
     vendor
     user
-    quantity "1"
-    cat_number "ABC123"
-    url "http://www.google.com"
-    price "100"
-    product_name "product"
+  end
+
+  factory :item do
+    order
+    quantity '15'
+    cat_number 'ABC123'
+    url "http://google.com"
+    price "10"
+    product_name "test"
   end
 end
