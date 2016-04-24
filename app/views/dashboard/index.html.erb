@@ -1,4 +1,15 @@
 <h1>DashBoard</h1>
+  <h3>Activity feed</h3>
+<div class="activity-feed columns">
+  <% @activities.each do |activity| %>
+    <div class="feed-item">
+      <div class="date"> <%= activity.created_at.strftime('%m-%e-%y') %> </div>
+      <div class="text>"> <%= activity.owner.username%> <%= render_activity activity %> </div>
+    </div>
+  <% end %>
+</div>
+
+
 <%= link_to "List of Vendors", vendors_path%>
 <br />
 <%= link_to "List of Orders", orders_path %>

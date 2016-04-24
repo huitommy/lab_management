@@ -1,0 +1,7 @@
+edited an item
+
+<% if activity.trackable %>
+ for  <%= link_to activity.trackable.order.vendor.name, order_path(activity.trackable.order) %>
+<% else %>
+  which no longer exists
+<% end %>

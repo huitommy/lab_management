@@ -1,6 +1,13 @@
 require 'factory_girl'
 
 FactoryGirl.define do
+  factory :activity do
+    user nil
+    action "MyString"
+    trackable nil
+    trackable_type "MyString"
+  end
+  
   factory :user do
     sequence(:username) { |n| "user#{n}" }
     sequence(:email) { |n| "email#{n}@email.com" }

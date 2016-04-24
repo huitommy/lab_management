@@ -12,6 +12,7 @@ gem 'devise'
 gem 'pry-rails'
 gem 'foundation-rails'
 gem 'pg_search'
+gem 'public_activity'
 
 group :development, :test do
   gem 'byebug'

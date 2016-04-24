@@ -1,4 +1,6 @@
 class Order < ActiveRecord::Base
+  include PublicActivity::Common
+
   belongs_to :vendor
   belongs_to :user
   has_many :items, dependent: :destroy

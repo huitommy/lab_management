@@ -22,6 +22,7 @@ class OrdersController < PermissionsController
   def create
     @order = current_user.orders.build(order_params)
     if @order.save
+      @order.create_activity :create, owner: current_user
       flash[:notice] = "You have created the order request successfully"
       redirect_to order_path(@order)
     else
@@ -39,6 +40,7 @@ class OrdersController < PermissionsController
   def update
     @order = Order.find(params[:id])
     if @order.update(order_params)
+        @order.create_activity :update, owner: current_user
       flash[:notice] = "You updated the order request successfully"
       redirect_to order_path(@order)
     else
@@ -50,6 +52,7 @@ class OrdersController < PermissionsController
   def destroy
     @order = Order.find(params[:id])
     @user = @order.user
+    @order.create_activity :destroy, owner: current_user
     @order.destroy
     flash[:notice] = "You have deleted the order request successfully"
     redirect_to orders_path
