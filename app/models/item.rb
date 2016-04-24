@@ -1,4 +1,6 @@
 class Item < ActiveRecord::Base
+  include PublicActivity::Common
+
   belongs_to :order
 
   validates :order_id, presence: true

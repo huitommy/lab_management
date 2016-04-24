@@ -1,0 +1,7 @@
+removed an item for
+
+<% if activity.trackable %>
+  <%= link_to activity.trackable.order.vendor.name, order_path(activity.trackable.order) %>
+<% else %>
+   <%= link_to activity.parameters[:order].vendor.name, order_path(activity.parameters[:order]) %>
+<% end %>

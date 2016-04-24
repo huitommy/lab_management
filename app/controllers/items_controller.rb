@@ -8,6 +8,7 @@ class ItemsController < PermissionsController
     @item.order = @order
 
     if @item.save
+      @item.create_activity :create, owner: current_user
       flash[:notice] = 'Item Added!'
       redirect_to order_path(@order)
     else
@@ -24,6 +25,7 @@ class ItemsController < PermissionsController
   def update
     @item = Item.find(params[:id])
     if @item.update(item_params)
+      @item.create_activity :update, owner: current_user
       flash[:notice] = 'Item was updated successfully!'
       redirect_to order_path(@item.order)
     else
@@ -35,6 +37,7 @@ class ItemsController < PermissionsController
   def destroy
     @item = Item.find(params[:id])
     @order = @item.order
+    @item.create_activity :destroy, owner: current_user, parameters: { order: @order}
     @item.destroy
     flash[:notice] = "Item was removed!"
     redirect_to @order
