@@ -6,6 +6,7 @@ class ItemsController < PermissionsController
     @item = Item.new(item_params)
     @items = @order.items
     @item.order = @order
+    @current_user = current_user
 
     if @item.save
       @item.create_activity :create, owner: current_user

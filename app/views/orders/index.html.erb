@@ -7,6 +7,8 @@
     <th> Requested by: </th>
     <th> Total Price </th>
     <th> Date Requested: </th>
+    <th> Order status:</th>
+    <th> PO #: </th>
   </tr>
   <div>
     <% @orders.each do |order| %>
@@ -20,6 +22,30 @@
       <% end %>
       <th> $<%= '%.2f' %  @total_price %> </th>
       <th> <%= order.created_at.strftime('%m-%e-%y')%> </th>
+      <% if order.ordered? %>
+        <th> Ordered</th>
+      <% else  %>
+        <th>
+          Pending
+        </th>
+      <% end %>
+
+      <th>
+        <% if @current_user.admin && !order.ordered? %>
+          <%= form_for order, url: complete_order_path(order) do |f| %>
+            <div class="row">
+               <%= f.label :po_number, "PO: " %>
+               <%= f.text_field :po_number %>
+               <div class="actions">
+                 <%= f.submit "Mark as ordered", method: :patch  %>
+               </div>
+            </div>
+          <% end %>
+        <% else %>
+          <%= order.po_number %>
+        <% end %>
+
+      </th>
     </tr>
     <% end %>
   </div>

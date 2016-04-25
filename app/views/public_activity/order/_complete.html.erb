@@ -1,0 +1,7 @@
+placed the order for
+
+<% if activity.trackable %>
+  <%= link_to activity.trackable.vendor.name, order_path(activity.trackable) %>
+<% else %>
+  which no longer exists
+<% end %>

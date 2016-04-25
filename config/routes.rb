@@ -10,9 +10,17 @@ Rails.application.routes.draw do
 
   resources :dashboard, only: [:index]
   resources :vendors
+  resources :users, only: [:index, :destroy] do
+    member do
+      patch :admin
+    end
+  end
   resources :orders do
     collection do
       get 'search'
+    end
+    member do
+      patch :complete
     end
     resources :items, only: [:create]
   end

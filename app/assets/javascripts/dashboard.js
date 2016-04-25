@@ -8,6 +8,6 @@ $(document).ready(function(){
   var auto_refresh = setInterval(
     function (){
       $('.activity-feed').load('/dashboard .activity-feed').fadeIn("slow");
-    }, 5000
+    }, 3500
   );
 });

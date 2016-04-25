@@ -12,14 +12,7 @@
   </div>
 
   <h3>Items:</h3>
-  <% @methods = ["product_name","quantity", "cat_number", "url", "price"] %>
-  <% @items.each do |item|%>
-    <%@methods.each do |method| %>
-      <li>
-        <%= item.send(method) %>
-      </li>
-    <% end %>
-  <% end %>
+  <%= render 'items' %>
 <% end %>
 
 <br />

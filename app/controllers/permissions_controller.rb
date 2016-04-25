@@ -8,4 +8,12 @@ class PermissionsController < ApplicationController
       redirect_to session.delete(:current_page)
     end
   end
+
+  def require_admin
+    session[:current_page] ||= request.referer
+    unless current_user.admin
+      flash[:alert] = 'You do not have permission to change this'
+      redirect_to root_path
+    end
+  end
 end
