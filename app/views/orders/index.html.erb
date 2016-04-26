@@ -33,7 +33,7 @@
       <th>
         <% if @current_user.admin && !order.ordered? %>
           <%= form_for order, url: complete_order_path(order) do |f| %>
-            <div class="row">
+            <div class="medium-12 columns">
                <%= f.label :po_number, "PO: " %>
                <%= f.text_field :po_number %>
                <div class="actions">

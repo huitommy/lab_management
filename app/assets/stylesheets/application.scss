@@ -4,9 +4,16 @@
  *= require foundation_and_overrides
  */
 
+
+$flash-success: #3b9089;
+$flash-error: #ff1500;
+$flash-alert: #ff9933;
+$white: #ffffff;
+$red: #ff0000;
+
 // top-bar
 
-.menu img{
+.menu img {
   height:50px;
 }
 
@@ -16,7 +23,7 @@
 }
 // homepage
 
-.homescreen{
+.homescreen {
   width: 100%;
   height: 100%;
   display: block;
@@ -36,35 +43,37 @@
   padding: 10px;
 }
 
-.labels{
+.labels {
   form label{
-    color: white;
+    color: $white;
     font-size: 30px;
   }
 }
 
+a#notification {
+  background-color: $red;
+  color: $white;
+}
+
 // flash messages
 
-$flash-success: #3B9089;
-$flash-error: #ff1500;
-$flash-alert: #ff9933;
 
-.flash.notice{
+.flash.notice {
   padding: 1em;
-  color: white;
-  background-color: $flash-success ;
+  color: $white;
+  background-color: $flash-success;
 }
 
-.flash.error{
+.flash.error {
   padding: 1em;
-  color: white;
-  background-color: $flash-error ;
+  color: $white;
+  background-color: $flash-error;
 }
 
-.flash.alert{
+.flash.alert {
   padding: 1em;
-  color: white;
-  background-color: $flash-alert ;
+  color: $white;
+  background-color: $flash-alert;
 }
 
 //Dashboard

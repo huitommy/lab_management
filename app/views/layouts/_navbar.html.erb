@@ -27,6 +27,10 @@
         <% if current_user || current_user.try(:admin?) %>
           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
           <li><%= link_to "Profile", edit_user_registration_path %></li>
+          <% @notification = Order.where(ordered: false) %>
+          <% if current_user.try(:admin?) && !@notification.empty?%>
+            <li> <%= link_to "#{@notification.count} pending orders", orders_path, id:"notification"%> </li>
+          <% end %>
           <% if !Vendor.all.empty? %>
             <li><%= link_to "New Order Request", new_order_path %></li>
           <% end %>
