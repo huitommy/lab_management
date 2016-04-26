@@ -38,14 +38,14 @@
 
 .labels{
   form label{
-    color: white;
+    color: #ffffff;
     font-size: 30px;
   }
 }
 
 a#notification{
-  background-color: red;
-  color: white;
+  background-color: #ff0000;
+  color: #ffffff;
 }
 
 // flash messages
@@ -56,19 +56,19 @@ $flash-alert: #ff9933;
 
 .flash.notice{
   padding: 1em;
-  color: white;
+  color: #ffffff;
   background-color: $flash-success ;
 }
 
 .flash.error{
   padding: 1em;
-  color: white;
+  color: #ffffff;
   background-color: $flash-error ;
 }
 
 .flash.alert{
   padding: 1em;
-  color: white;
+  color: #ffffff;
   background-color: $flash-alert ;
 }
 
