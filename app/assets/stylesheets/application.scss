@@ -4,6 +4,13 @@
  *= require foundation_and_overrides
  */
 
+
+ $flash-success: #3B9089;
+ $flash-error: #ff1500;
+ $flash-alert: #ff9933;
+ $white: $white;
+ $red: #ff0000;
+
 // top-bar
 
 .menu img{
@@ -38,38 +45,35 @@
 
 .labels{
   form label{
-    color: #ffffff;
+    color: $white;
     font-size: 30px;
   }
 }
 
 a#notification{
-  background-color: #ff0000;
-  color: #ffffff;
+  background-color: $red;
+  color: $white;
 }
 
 // flash messages
 
-$flash-success: #3B9089;
-$flash-error: #ff1500;
-$flash-alert: #ff9933;
 
 .flash.notice{
   padding: 1em;
-  color: #ffffff;
-  background-color: $flash-success ;
+  color: $white;
+  background-color: $flash-success;
 }
 
 .flash.error{
   padding: 1em;
-  color: #ffffff;
-  background-color: $flash-error ;
+  color: $white;
+  background-color: $flash-error;
 }
 
 .flash.alert{
   padding: 1em;
-  color: #ffffff;
-  background-color: $flash-alert ;
+  color: $white;
+  background-color: $flash-alert;
 }
 
 //Dashboard
