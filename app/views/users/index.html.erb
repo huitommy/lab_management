@@ -1,6 +1,7 @@
 <h1>Users:</h1>
 
 <% @users.each do |user| %>
+<div class="users-list">
   <p> User: <%= user.username %> </p>
   <p> Admin: <%= user.admin %> </p>
   <% if user.admin %>
@@ -8,4 +9,5 @@
   <% else %>
     <%= link_to "Make admin", admin_user_path(user), method: :patch %>
   <% end %>
+</div>
 <% end %>

@@ -12,7 +12,22 @@
   </div>
 
   <h3>Items:</h3>
-  <%= render 'items' %>
+  <ul>
+    <% @items.each_with_index do |item, index|%>
+      <li>Item# <%= index + 1 %></li>
+      <ul>
+        <li> <%= item.product_name %> </li>
+        <li> Cat # <%= item.cat_number %> </li>
+        <li> QTY: <%= item.quantity %> </li>
+        <li> Price: <%= '%.2f' % item.price %> </li>
+        <li> URL: <a href="<%= item.url %>"  target="_blank"><%= item.url %></a> </li>
+      </ul>
+      <% unless @order.ordered %>
+        <%= link_to "Edit Item", edit_item_path(item) %>
+        <%= link_to "Delete Item", item, method: :delete %>
+      <% end %>
+    <% end %>
+  </ul>
 <% end %>
 
 <br />

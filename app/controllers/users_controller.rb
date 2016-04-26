@@ -3,7 +3,7 @@ class UsersController < PermissionsController
   before_action :require_admin, only: [:index, :admin, :destroy]
 
   def index
-    @users = User.all
+    @users = User.all.order(username: :asc)
   end
 
   def destroy
