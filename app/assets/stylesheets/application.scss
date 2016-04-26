@@ -43,6 +43,11 @@
   }
 }
 
+a#notification{
+  background-color: red;
+  color: white;
+}
+
 // flash messages
 
 $flash-success: #3B9089;
