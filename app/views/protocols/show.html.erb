@@ -1,6 +1,6 @@
 <h1> <%= @protocol.name %> </h1>
 <p>
-  <%= @protocol.procedure %>
+  <%=raw @protocol.procedure %>
 </p>
 
 <%= button_to "Edit", edit_protocol_path(@protocol), method: :get %>

@@ -13,6 +13,7 @@ gem 'pry-rails'
 gem 'foundation-rails'
 gem 'pg_search'
 gem 'public_activity'
+gem 'tinymce-rails'
 
 group :development, :test do
   gem 'byebug'

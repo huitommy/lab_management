@@ -5,10 +5,10 @@
     <%= f.text_field :name %>
   </div>
 
-
+  <%= tinymce %>
   <div class="field">
     <%= f.label :procedure %><br>
-    <%= f.text_area :procedure %>
+    <%= f.text_area :procedure, class: "tinymce", :rows => 40, :cols => 120 %>
   </div>
 
   <div class="field">
