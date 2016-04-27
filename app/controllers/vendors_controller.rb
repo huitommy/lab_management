@@ -35,7 +35,7 @@ class VendorsController < PermissionsController
     @states = Vendor::STATES
     @vendor = Vendor.find(params[:id])
     if @vendor.update(vendor_params)
-      flash[:notice] = "You have added the vendor successfully"
+      flash[:notice] = "You have updated the vendor successfully"
       redirect_to vendor_path(@vendor)
     else
       flash[:alert] = @vendor.errors.full_messages.join(". ")
@@ -46,7 +46,7 @@ class VendorsController < PermissionsController
   def destroy
     @vendor = Vendor.find(params[:id])
     @vendor.destroy
-    flash[:notice] = "You have added the vendor successfully"
+    flash[:notice] = "You have deleted the vendor successfully"
     redirect_to vendors_path
   end
 

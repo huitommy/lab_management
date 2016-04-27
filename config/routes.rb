@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   root to: "welcome#index"
 
   resources :dashboard, only: [:index]
+  resources :protocols
   resources :vendors
   resources :users, only: [:index, :destroy] do
     member do

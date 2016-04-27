@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
 
   has_many :orders
   has_many :vendors, through: :orders
+  has_many :protocols
 
   validates :email, uniqueness: true, presence: true
   validates :username, presence: true, :uniqueness => {
