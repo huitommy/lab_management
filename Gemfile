@@ -14,6 +14,9 @@ gem 'foundation-rails'
 gem 'pg_search'
 gem 'public_activity'
 gem 'tinymce-rails'
+gem 'carrierwave'
+gem "fog"
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'byebug'
