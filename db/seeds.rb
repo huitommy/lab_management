@@ -1,3 +1,5 @@
+require 'FactoryGirl'
+
 vendors = [
   'VWR',
   'Sigma Aldrich',
