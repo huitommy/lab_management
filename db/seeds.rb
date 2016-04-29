@@ -13,6 +13,9 @@ vendors.each do |name|
   FactoryGirl.create(:vendor, name: name)
 end
 
+FactoryGirl.create(:user, username: "user1", password: "password", admin: true)
+FactoryGirl.create(:user, username: "user2", password: "password")
+
 # 50.times do
 #   user = FactoryGirl.create(:user)
 #   vendor = Vendor.all.sample

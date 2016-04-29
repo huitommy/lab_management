@@ -77,7 +77,7 @@ class OrdersController < PermissionsController
       @order.update_attribute(:ordered, true)
       @order.create_activity :complete, owner: current_user
       flash[:notice] = "You updated the order request successfully"
-      redirect_to order_path(@order)
+      redirect_to orders_path
     else
 
     end

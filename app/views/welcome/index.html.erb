@@ -12,11 +12,11 @@
   </head>
 
 <body>
-  <%= render 'layouts/navbar' %>
+  <%= render 'nav/index' %>
   <%= render 'layouts/flash' %>
 
   <div class="homescreen">
-    <img src="/assets/home.png" alt= "dna" />
+    <img src="/assets/background.png" alt= "dna" />
 
     <div class="small-2 large-3 card" id="login-box">
       <%if current_user.nil? -%>
@@ -42,4 +42,5 @@
     </div>
 
   </div>
+
 </body>

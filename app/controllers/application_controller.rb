@@ -1,6 +1,7 @@
 class ApplicationController < ActionController::Base
   include PublicActivity::StoreController
   before_action :configure_permitted_parameters, if: :devise_controller?
+  before_action :set_notifications
 
   protected
 
@@ -16,4 +17,7 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery with: :exception
 
+  def set_notifications
+    @notification = Order.where(ordered: false)
+  end
 end

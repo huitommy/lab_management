@@ -8,6 +8,8 @@ Rails.application.routes.draw do
 
   root to: "welcome#index"
 
+  resources :nav, only: [:index]
+
   resources :dashboard, only: [:index]
   resources :protocols
   resources :vendors

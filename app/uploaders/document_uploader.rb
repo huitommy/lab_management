@@ -1,5 +1,4 @@
 class DocumentUploader < CarrierWave::Uploader::Base
-
   if Rails.env == "test"
     storage :file
   else
@@ -13,5 +12,4 @@ class DocumentUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %w(pdf doc htm html docx pages)
   end
-
 end

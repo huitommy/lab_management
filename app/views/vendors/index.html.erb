@@ -1,7 +1,14 @@
-<h1>List of Vendors</h1>
+<div class="small-6 small-centered columns orders">
+  <div class="small-10 small-centered columns" >
+    <div class="callout", id="vendors-box">
 
-<% @vendors.each do |vendor| %>
-  <p> <%= link_to vendor.name, vendor_path(vendor) %> </p>
-<% end %>
+    <h1>Vendors</h1>
 
-<%= button_to "Add a new vendor", new_vendor_path, method: :get %>
+    <% @vendors.each do |vendor| %>
+      <p> <%= link_to vendor.name, vendor_path(vendor) %> </p>
+    <% end %>
+
+    <%= button_to "Add a new vendor", new_vendor_path, method: :get %>
+  </div>
+  </div>
+</div>

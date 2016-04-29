@@ -1,5 +1,7 @@
+<div class="dashboard small-centered-column">
+
 <h1>DashBoard</h1>
-  <h3>Activity feed</h3>
+<h3>Activity feed</h3>
 <div class="activity-feed columns">
   <% @activities.each do |activity| %>
     <div class="feed-item">
@@ -9,7 +11,8 @@
   <% end %>
 </div>
 
-
 <%= link_to "List of Vendors", vendors_path%>
 <br />
 <%= link_to "List of Orders", orders_path %>
+
+</div>

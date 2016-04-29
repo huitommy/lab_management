@@ -1,15 +1,16 @@
-<h1>Create New Order Request</h1>
+<div class="small-6 small-centered columns orders">
+  <div class="small-10 small-centered columns" >
+    <h2>Create Order Request</h2>
 
-<%= form_for(@order) do |f| %>
-  <div class="row">
-     <%= f.label :vendor_id, "Vendor:" %>
-     <%= f.select :vendor_id, options_from_collection_for_select(Vendor.all, :id, :name) %>
-  </div>
+  <%= form_for(@order) do |f| %>
+       <%= f.label :vendor_id, "Vendor:" %>
+       <%= f.select :vendor_id, options_from_collection_for_select(Vendor.all, :id, :name) %>
 
-  <div class="actions">
-    <%= f.submit %>
+    <div class="action">
+      <%= f.submit %>
+    </div>
+    <br />
+    <%= link_to "Back to orders", orders_path %>
+  <% end %>
   </div>
-  
-  <br />
-  <%= link_to "Back to orders", orders_path %>
-<% end %>
+</div>
