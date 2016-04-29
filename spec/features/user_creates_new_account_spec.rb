@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User creates a new account:' do
+feature 'User creates a new account:', js: true do
 
   before :each do
     visit root_path

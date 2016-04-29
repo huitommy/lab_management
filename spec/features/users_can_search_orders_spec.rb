@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'Search bar:' do
+feature 'Search bar:', js: true do
 
   before(:each) do
     v1 = FactoryGirl.create(:vendor, name: 'VWR')

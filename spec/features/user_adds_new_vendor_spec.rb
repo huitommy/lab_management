@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User adds new vendor:' do
+feature 'User adds new vendor:', js: true do
 
   context "user is signed in" do
     before(:each) do

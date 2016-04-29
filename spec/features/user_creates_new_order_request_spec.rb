@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-feature 'User creates new order request' do
+feature 'User creates new order request', js: true do
 
   context 'user is signed in' do
     before(:each) do
