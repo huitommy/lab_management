@@ -151,17 +151,19 @@ label{
   }
 }
 
-#vendors-show {
-  text-align: center;
-  padding: 0px;
-  margin-top: 100px;
-}
 
 #vendor-name {
+  padding: 0px;
   h1 {
     background-color: $blue;
     color: white;
   }
+}
+
+#vendors-show {
+  text-align: center;
+  padding: 1em;
+  margin-top: 100px;
 }
 
 #protocol-box {
