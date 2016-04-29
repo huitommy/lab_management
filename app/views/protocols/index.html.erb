@@ -1,6 +1,13 @@
-List of Protocols
-<% @protocols.each do |protocol|  %>
-  <li>
-    <%= link_to "#{protocol.name}", protocol_path(protocol) %>
-  </li>
-<% end %>
+<div class="small-10 small-centered columns" >
+  <div class="callout", id="protocol-box">
+    <h2> List of Protocols </h2>
+    <% @protocols.each do |protocol|  %>
+      <li>
+        <%= link_to "#{protocol.name}", protocol_path(protocol) %>
+      </li>
+    <% end %>
+    <div class="small-7 columns">
+      <%= link_to "Add a protocol", new_protocol_path %>
+    </div>
+  </div>
+</div>
