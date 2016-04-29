@@ -1,13 +1,13 @@
-<div class="small-10 small-centered columns" >
+<div class="small-6 small-centered columns" >
   <div class="callout", id="protocol-box">
-    <h2> List of Protocols </h2>
+    <h3> List of Protocols </h3>
     <% @protocols.each do |protocol|  %>
-      <li>
-        <%= link_to "#{protocol.name}", protocol_path(protocol) %>
-      </li>
+    <div id="protocol-list">
+      <li> <%= link_to "#{protocol.name}", protocol_path(protocol) %> </li>
+    </div>
     <% end %>
-    <div class="small-7 columns">
-      <%= link_to "Add a protocol", new_protocol_path %>
+    <div id= "protocol-list">
+      <%= button_to "Add a protocol", new_protocol_path, class:"button"%>
     </div>
   </div>
 </div>

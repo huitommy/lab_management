@@ -169,12 +169,15 @@ label{
 #protocol-box {
   margin-top: 100px;
   padding: 0px;
-  padding-bottom: 30px;
-  h2 {
+  h3 {
     background-color: $blue;
     text-align: center;
     color: white;
   }
+}
+
+#protocol-list {
+  text-align: center;
 }
 
 // Foooter
