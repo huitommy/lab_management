@@ -10,7 +10,7 @@ $(document).ready(function(){
   var auto_refresh = setInterval(
     function (){
       $('.activity-feed').load('/dashboard .activity-feed').fadeIn("slow");
-    }, 100
+    }, 1000
   );
 
   var auto_refresh_nav = setInterval(
