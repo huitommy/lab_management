@@ -41,7 +41,7 @@ feature 'User adds new item to order request', js: true do
     scenario "any user can add items to an exisiting order request as long as it's not marked as 'ordered'" do
       click_on 'Sign Out'
       sign_in_as(@user2)
-      click_on 'Orders'
+      visit orders_path
       click_on 'vendor1'
       fill_in_order
 
