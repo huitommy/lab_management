@@ -4,7 +4,6 @@
  *= require foundation_and_overrides
  */
 
-
 $flash-success: #3b9089;
 $flash-error: #ff1500;
 $flash-alert: #ff9933;
@@ -15,220 +14,70 @@ $topbar: #454545;
 $footer: #262626;
 $copyright: #0066cd;
 
-// top-bar
+// body{
+//   background-color: #e3e3e3;
+// }
 
-.menu img {
-  height: 70px;
-}
+// notification button
 
-.top-bar input {
-  width: 200px;
-}
+// a#notification {
+//   background-color: $red;
+//   color: $white;
+// }
 
-// homepage
+//
+//
 
-.homescreen {
-  background: image-url('background.png') no-repeat center;
-  height: 100vh;
-}
-
-#login-box{
-  position: relative;
-  left: 35%;
-  top: 25%;
-  background: rgba(0,0,0,0.7);
-  padding: 40px;
-}
-
-.labels {
-  form label{
-    color: $white;
-    font-size: 30px;
-  }
-}
-
-a#notification {
-  background-color: $red;
-  color: $white;
-}
-
-// flash messages
-
-.flash.notice {
-  padding: 1em;
-  color: $white;
-  background-color: $flash-success;
-}
-
-.flash.error {
-  padding: 1em;
-  color: $white;
-  background-color: $flash-error;
-}
-
-.flash.alert {
-  padding: 1em;
-  color: $white;
-  background-color: $flash-alert;
-}
-
-//Dashboard
-
-.activity-feed {
-  padding: 15px;
-}
-
-.activity-feed .feed-item {
-  position: relative;
-  padding-bottom: 20px;
-  padding-left: 30px;
-  border-left: 2px solid #8c8c8c;
-}
-
-.activity-feed .feed-item:last-child {
-  border-color: transparent;
-}
-
-.activity-feed .feed-item:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: -6px;
-  width: 10px;
-  height: 10px;
-  border-radius: 6px;
-  background: #fff;
-  border: 1px solid #3399ff;
-}
-
-.activity-feed .feed-item .date {
-  position: relative;
-  top: -5px;
-  color: #595959;
-  text-transform: uppercase;
-  font-size: 13px;
-}
-.activity-feed .feed-item .text {
-  position: relative;
-  top: -3px;
-}
-
-body{
-  background-color: #e3e3e3;
-}
-
-.top-bar-right{
-  padding-top: 1em;
-  font-size: 1.1em;
-}
-
-.menu-title{
-  padding-top: 1em;
-}
-
-.orders{
-  text-align: center;
-  font-size: 1em;
-}
-
-label{
-  font-size: 1em;
-}
-
-#vendors-box {
-  margin-top: 100px;
-  padding: 0px;
-  padding-bottom: 20px;
-  h1 {
-    background-color: $blue;
-    color: white;
-  }
-}
-
-
-#vendor-name {
-  padding: 0px;
-  h1 {
-    background-color: $blue;
-    color: white;
-  }
-}
-
-#vendors-show {
-  text-align: center;
-  padding: 1em;
-  margin-top: 100px;
-}
-
-#protocol-box {
-  margin-top: 100px;
-  padding: 0px;
-  h3 {
-    background-color: $blue;
-    text-align: center;
-    color: white;
-  }
-}
-
-#protocol-list {
-  text-align: center;
-}
-
-// Other page Foooter
-
-* {
-	margin: 0;
-}
-html, body {
-	height: 100%;
-}
-.page-wrap {
-  min-height: 100%;
-}
-
-//footer
-
-.homepage-footer {
-  background: linear-gradient($footer, $topbar);
-  border-style: solid;
-  border-color: #8a8a8a;
-  padding: 1rem;
-  font-size:  1.0rem;
-  text-align: center;
-  border: 0;
-  p {
-    &.copyright {
-      color: $copyright;
-      font-size: 1.2rem;
-      margin: 0;
-    }
-    &.title {
-      color: $blue;
-      font-size: 2rem;
-      margin: 0 0 1rem;
-    }
-    &.project {
-      color: $white;
-      font-size: 1rem;
-      margin: 0;
-    }
-  }
-}
-
-.icons a {
-  padding: 0 0 0 2rem;
-  font-size: 3em;
-  margin-left: auto;
-}
-
-.links a {
-  font-weight: bold;
-  color: $white;
-  padding: 3rem 0 2rem;
-  margin: 0;
-    &::after {
-      content: "|";
-      padding: 0 0.4rem 0 0.8rem;
-    }
-}
+//
+//
+// .menu-title{
+//   padding-top: 1em;
+// }
+//
+// .orders{
+//   text-align: center;
+//   font-size: 1em;
+// }
+//
+// label{
+//   font-size: 1em;
+// }
+//
+// #vendors-box {
+//   margin-top: 100px;
+//   padding: 0px;
+//   padding-bottom: 20px;
+//   h1 {
+//     background-color: $blue;
+//     color: white;
+//   }
+// }
+//
+//
+// #vendor-name {
+//   padding: 0px;
+//   h1 {
+//     background-color: $blue;
+//     color: white;
+//   }
+// }
+//
+// #vendors-show {
+//   text-align: center;
+//   padding: 1em;
+//   margin-top: 100px;
+// }
+//
+// #protocol-box {
+//   margin-top: 100px;
+//   padding: 0px;
+//   h3 {
+//     background-color: $blue;
+//     text-align: center;
+//     color: white;
+//   }
+// }
+//
+// #protocol-list {
+//   text-align: center;
+// }

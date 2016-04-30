@@ -1,0 +1,27 @@
+@import 'application.scss';
+
+.top-bar {
+  padding: 0;
+  h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    padding-top: 0;
+    .fa.fa-flask {
+      padding: 0;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.menu > li.menu-title > a {
+  padding-bottom: 0em;
+}
+
+.topbar-links a {
+  display: block;
+  padding: 0.5rem;
+  margin-top: 0.5em;
+  line-height: 1;
+  font-size: 20px;
+  color: $blue;
+}

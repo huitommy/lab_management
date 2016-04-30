@@ -1,0 +1,21 @@
+@import 'application.scss';
+
+.homescreen {
+  background: image-url('background.png') no-repeat center;
+  height: 100vh;
+}
+
+#login-box{
+  position: relative;
+  left: 35%;
+  top: 25%;
+  background: rgba(0,0,0,0.7);
+  padding: 40px;
+}
+
+.labels {
+  form label{
+    color: $white;
+    font-size: 30px;
+  }
+}
