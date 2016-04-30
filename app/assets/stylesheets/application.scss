@@ -12,6 +12,8 @@ $white: #ffffff;
 $red: #ff0000;
 $blue: #1a8cff;
 $topbar: #454545;
+$footer: #262626;
+$copyright: #0066cd;
 
 // top-bar
 
@@ -20,14 +22,14 @@ $topbar: #454545;
 }
 
 .top-bar input {
-  width: 170px;
-  margin-right: 1rem;
+  width: 200px;
 }
+
 // homepage
 
 .homescreen {
   background: image-url('background.png') no-repeat center;
-  height: 95vh;
+  height: 100vh;
 }
 
 #login-box{
@@ -173,7 +175,7 @@ label{
   text-align: center;
 }
 
-// Foooter
+// Other page Foooter
 
 * {
 	margin: 0;
@@ -184,36 +186,51 @@ html, body {
 .page-wrap {
   min-height: 100%;
   /* equal to footer height */
-	margin-bottom: -142px;
-}
-.page-wrap:after {
-  content: "";
-  display: block;
-}
-.site-footer, .page-wrap:after {
-  /* .push must be the same height as footer */
-	height: 142px;
-}
-.site-footer {
-  background: $topbar;
+	margin-bottom: -250px;
 }
 
-.dashboard {
-  color: $blue;
-  h1 {
-    text-align: center;
+//footer
+
+.homepage-footer {
+  background: linear-gradient($footer, $topbar);
+  border-style: solid;
+  border-color: #8a8a8a;
+  padding: 1rem;
+  font-size:  1.0rem;
+  text-align: center;
+  border: 0;
+  p {
+    &.copyright {
+      color: $copyright;
+      font-size: 1.2rem;
+      margin: 0;
+    }
+    &.title {
+      color: $blue;
+      font-size: 2rem;
+      margin: 0 0 1rem;
+    }
+    &.project {
+      color: $white;
+      font-size: 1rem;
+      margin: 0;
+    }
   }
 }
 
-.feed {
+.icons a {
+  padding: 0 0 0 2rem;
+  font-size: 3em;
   margin-left: auto;
 }
 
-.homepage-footer {
-  background-color: $topbar;
-}
-
-.homepage-page-wrap {
-  min-height: 100%;
-  margin-bottom: -18.5em;
+.links a {
+  font-weight: bold;
+  color: $white;
+  padding: 3rem 0 2rem;
+  margin: 0;
+    &::after {
+      content: "|";
+      padding: 0 0.4rem 0 0.8rem;
+    }
 }

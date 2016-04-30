@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title> LabSolutions</title>
-
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title> LabSolutions </title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <%= stylesheet_link_tag    "application" %>
     <%= csrf_meta_tags %>
     <%= javascript_include_tag "application"%>
@@ -20,7 +20,33 @@
         <%= yield %>
       </div>
     </div>
-    <footer class="site-footer">
+    <footer class="homepage-footer">
+      <div class="row">
+        <div class="small-12 columns">
+          <p class="title"> LabSolutions </p>
+          <p class="icons">
+            <a href="mailto:hui.1tommy@gmail.com">
+              <i class="fa fa-envelope-o" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/huitommy">
+              <i class="fa fa-linkedin" aria-hidden="true"></i>
+            </a>
+
+            <a href="https://github.com/huitommy">
+              <i class="fa fa-github" aria-hidden="true"></i>
+            </a>
+          </p>
+          <p class="links">
+            <%= link_to 'Home', root_path %>
+            <%= link_to 'Orders', orders_path %>
+            <%= link_to 'Vendors', vendors_path %>
+            <%= link_to 'Protocols', protocols_path %>
+          </p>
+          <p class="project"> Capstone Project for Launch Academy </p>
+          <p class="copyright"> Copyright &copy;2016 Tommy Hui </p>
+        </div>
+      </div>
     </footer>
   </body>
 </html>
