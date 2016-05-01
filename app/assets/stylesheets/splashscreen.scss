@@ -1,19 +1,19 @@
-@import 'application.scss';
+@import "application";
 
 .homescreen {
   background: image-url("background.png") no-repeat center;
   height: 100vh;
 }
 
-#login-box{
-  width: 350px;
+#login-box {
+  background: rgba(0,0,0,0.7);
   margin-left: auto;
   margin-right: auto;
-  top: 25%;
+  padding: 1em;
   position: relative;
   text-align: center;
-  padding: 1em;
-  background: rgba(0,0,0,0.7);
+  top: 25%;
+  width: 350px;
 }
 
 .labels {
@@ -21,30 +21,27 @@
     color: $white;
     font-size: 20px;
   }
-}
-
-.labels input#username {
-  background: #fff url('username.png') 20px top no-repeat;
-  background-size: 16px 80px;
-}
-
-.labels input#password {
-  background: #fff url('password.png') 20px top no-repeat;
-  background-size: 16px 80px;
-}
-
-.labels input {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
-  font-size: 14px;
-  font-weight: bold;
-  height: 42px;
-  margin-bottom: 20px;
-  outline: none;
-  padding: 0 20px 0 50px;
-  width: 100%;
+  input#username {
+    background: #fff url('username.png') 20px top no-repeat;
+    background-size: 16px 80px;
+  }
+  input#password {
+    background: #fff url('password.png') 20px top no-repeat;
+    background-size: 16px 80px;
+  }
+  input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    height: 42px;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 0 20px 0 50px;
+    width: 100%;
+  }
 }
 
 .labels input:active,
