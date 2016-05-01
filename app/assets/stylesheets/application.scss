@@ -4,7 +4,6 @@
  *= require foundation_and_overrides
  */
 
-
 $flash-success: #3b9089;
 $flash-error: #ff1500;
 $flash-alert: #ff9933;
@@ -12,208 +11,87 @@ $white: #ffffff;
 $red: #ff0000;
 $blue: #1a8cff;
 $topbar: #454545;
+$footer: #262626;
+$copyright: #0066cd;
+$background: #bfbfbf;
+$gray: #cccccc;
+$text-blue: #1682E6;
 
-// top-bar
-
-.menu img {
-  height: 70px;
-}
-
-.top-bar input {
-  width: 170px;
-  margin-right: 1rem;
-}
-// homepage
-
-.homescreen {
-  background: image-url('background.png') no-repeat center;
-  height: 95vh;
-}
-
-#login-box{
-  position: relative;
-  left: 35%;
-  top: 25%;
-  background: rgba(0,0,0,0.7);
-  padding: 40px;
-}
-
-.labels {
-  form label{
-    color: $white;
-    font-size: 30px;
-  }
-}
-
-a#notification {
-  background-color: $red;
-  color: $white;
-}
-
-// flash messages
-
-.flash.notice {
-  padding: 1em;
-  color: $white;
-  background-color: $flash-success;
-}
-
-.flash.error {
-  padding: 1em;
-  color: $white;
-  background-color: $flash-error;
-}
-
-.flash.alert {
-  padding: 1em;
-  color: $white;
-  background-color: $flash-alert;
-}
-
-//Dashboard
-
-.activity-feed {
-  padding: 15px;
-}
-
-.activity-feed .feed-item {
-  position: relative;
-  padding-bottom: 20px;
-  padding-left: 30px;
-  border-left: 2px solid #8c8c8c;
-}
-
-.activity-feed .feed-item:last-child {
-  border-color: transparent;
-}
-
-.activity-feed .feed-item:after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: -6px;
-  width: 10px;
-  height: 10px;
-  border-radius: 6px;
-  background: #fff;
-  border: 1px solid #3399ff;
-}
-
-.activity-feed .feed-item .date {
-  position: relative;
-  top: -5px;
-  color: #595959;
-  text-transform: uppercase;
-  font-size: 13px;
-}
-.activity-feed .feed-item .text {
-  position: relative;
-  top: -3px;
-}
-
-body{
-  background-color: #e3e3e3;
-}
-
-.top-bar-right{
-  padding-top: 1em;
-  font-size: 1.1em;
-}
-
-.menu-title{
-  padding-top: 1em;
-}
-
-.orders{
-  text-align: center;
-  font-size: 1em;
-}
-
-label{
-  font-size: 1em;
-}
-
-#vendors-box {
-  margin-top: 100px;
-  padding: 0px;
-  padding-bottom: 20px;
-  h1 {
-    background-color: $blue;
-    color: white;
-  }
-}
-
-
-#vendor-name {
-  padding: 0px;
-  h1 {
-    background-color: $blue;
-    color: white;
-  }
-}
-
-#vendors-show {
-  text-align: center;
-  padding: 1em;
-  margin-top: 100px;
-}
-
-#protocol-box {
-  margin-top: 100px;
-  padding: 0px;
-  h3 {
-    background-color: $blue;
-    text-align: center;
-    color: white;
-  }
-}
-
-#protocol-list {
-  text-align: center;
-}
-
-// Foooter
-
-* {
-	margin: 0;
-}
-html, body {
-	height: 100%;
-}
 .page-wrap {
-  min-height: 100%;
-  /* equal to footer height */
-	margin-bottom: -142px;
-}
-.page-wrap:after {
-  content: "";
-  display: block;
-}
-.site-footer, .page-wrap:after {
-  /* .push must be the same height as footer */
-	height: 142px;
-}
-.site-footer {
-  background: $topbar;
+  background-color: $background;
 }
 
-.dashboard {
-  color: $blue;
-  h1 {
-    text-align: center;
-  }
+
+.login-block {
+  width: 500px;
+  padding: 20px;
+  background: $white;
+  border-radius: 5px;
+  border-top: 5px solid $topbar;
+  border-bottom: 5px solid $topbar;
+  margin: 1em auto;
 }
 
-.feed {
-  margin-left: auto;
+.login-block h2 {
+  text-align: center;
+  color: #000;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 20px;
 }
 
-.homepage-footer {
-  background-color: $topbar;
+.login-block input {
+  width: 100%;
+  height: 42px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0 20px 0 50px;
+  outline: none;
 }
 
-.homepage-page-wrap {
-  min-height: 100%;
-  margin-bottom: -18.5em;
+.login-block input#username {
+  background: #fff url('username.png') 20px top no-repeat;
+  background-size: 16px 80px;
+}
+
+.login-block input#password {
+  background: #fff url('password.png') 20px top no-repeat;
+  background-size: 16px 80px;
+}
+.login-block input#password-confirmation {
+  background: #fff url('password.png') 20px top no-repeat;
+  background-size: 16px 80px;
+}
+.login-block input#email {
+  background: #fff url('username.png') 20px top no-repeat;
+  background-size: 16px 80px;
+}
+
+.login-block input:active, .login-block input:focus {
+  border: 1px solid $blue;
+}
+
+.login-block button {
+  width: 60%;
+  height: 40px;
+  background: #ff656c;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #e15960;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+  cursor: pointer;
+}
+
+.login-block button:hover {
+  background: #ff7b81;
 }

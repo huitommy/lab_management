@@ -1,0 +1,53 @@
+@import "application";
+
+.homescreen {
+  background: image-url("background.png") no-repeat center;
+  height: 100vh;
+}
+
+#login-box {
+  background: rgba(0, 0, 0, 0.7);
+  margin-left: auto;
+  margin-right: auto;
+  padding: 1em;
+  position: relative;
+  text-align: center;
+  top: 25%;
+  width: 350px;
+}
+
+.labels {
+  form label {
+    color: $white;
+    font-size: 20px;
+  }
+
+  input#username {
+    background: #fff url('username.png') 20px top no-repeat;
+    background-size: 16px 80px;
+  }
+
+  input#password {
+    background: #fff url('password.png') 20px top no-repeat;
+    background-size: 16px 80px;
+  }
+
+  input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: bold;
+    height: 42px;
+    margin-bottom: 20px;
+    outline: none;
+    padding: 0 20px 0 50px;
+    width: 100%;
+  }
+}
+
+.labels input:active,
+.labels input:focus {
+  border: 2px solid $blue;
+}

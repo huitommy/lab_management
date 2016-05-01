@@ -1,0 +1,49 @@
+@import "application";
+
+.row.dashboard {
+  color: black;
+  text-align: center;
+  margin-top: 20px;
+  border: none;
+  background: #e6e6e6;
+  color: white;
+  h3 {
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient($blue, $topbar)
+  }
+}
+
+.callout.recent {
+  border: none;
+  background: #e6e6e6;
+  h4 {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+  }
+}
+
+span#view-all {
+  font-size: 15px;
+}
+
+.callout.small-6.columns {
+  padding: 0.5em;
+  padding-left: 2em;
+  text-align: left;
+  margin-top: 1em;
+  border: none;
+  background: #e6e6e6;
+}
+
+.callout.small-6.columns.activity {
+  border: none;
+  margin-top: 16px;
+  padding-top: 0px;
+  background: #e6e6e6;
+  h4 {
+    border-bottom: 1px solid rgba(51, 51, 51, 0.2);
+  }
+}
+
+.activity-feed {
+  text-align: left;
+}

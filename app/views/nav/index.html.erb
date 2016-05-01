@@ -1,48 +1,49 @@
-<div class="contain-to-grid">
-  <div class="top-bar">
-    <div class="top-bar-left large-12 medium-6 small-3 row stacked-for-medium">
-      <ul class="menu">
-        <li class="menu align-left">
-          <img src="/assets/logo.png" />
-        </li>
-        <li class="menu-title row">
-          <a href="/"> <h4> LabSolutions </h4> </a>
-        </li>
-        <li>
-          <%= form_tag search_orders_path, method: :get do %>
-        <div class="small-7 columns">
-          <%= text_field_tag :query, params[:query] %>
-        </div>
-          <%= submit_tag "Search Orders", class: "button searchbutton", id: "searchbutton" %>
-          <% end %>
-        </li>
-      </ul>
-    </div>
+<div class="top-bar">
+  <div class="top-bar-left large-6 medium-6 small-3 row stacked-for-medium">
+    <ul class="menu">
+      <li class="menu-title">
+        <a href="/"> <h2> LabSolutions <i class="fa fa-flask" aria-hidden="true"></i> </h2 >  </a>
+      </li>
+      <li>
+        <%= form_tag search_orders_path, method: :get do %>
+      <div class="small-7 columns">
+        <%= text_field_tag :query, params[:query] %>
+      </div>
+        <%= submit_tag "Search Orders", class: "button searchbutton", id: "searchbutton" %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
 
-    <div class="top-bar-right large-12 medium-6 small-3 row stacked-for-medium">
-      <ul class="menu align-right">
+  <div class="top-bar-right large-6 medium-6 small-3 row stacked-for-medium">
+    <div class="topbar-links">
+    <ul class="menu align-right">
         <% if current_user || current_user.try(:admin?) %>
           <li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
           <li><%= link_to "Profile", edit_user_registration_path %></li>
+
             <% if current_user.try(:admin?) %>
               <li> <%= link_to "Admin", users_path %></li>
             <% end %>
+
             <% if current_user.try(:admin?) && !@notification.empty?%>
               <li> <%= link_to "#{@notification.count} pending orders", orders_path, id:"notification"%> </li>
             <% end %>
-            <li> <%= link_to "Add Protocols", new_protocol_path %> </li>
+
+          <li> <%= link_to "Add Protocols", new_protocol_path %> </li>
+
           <% if !Vendor.all.empty? %>
             <li><%= link_to "New Order Request", new_order_path %></li>
           <% end %>
+          
           <li><%= link_to "New Vendor", new_vendor_path %></li>
-          <li> <%= link_to "Vendors", vendors_path %></li>
-          <li><%= link_to "Orders", orders_path %></li>
-          <li> <%= link_to "Protocols", protocols_path %> </li>
+
         <% else %>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
           <li><%= link_to "Sign In", new_user_session_path %></li>
         <% end %>
-      </ul>
-    </div>
+
+    </ul>
+  </div>
   </div>
 </div>

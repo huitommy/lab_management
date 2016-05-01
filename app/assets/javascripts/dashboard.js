@@ -5,7 +5,7 @@ $(document).ready(function(){
     $('#flash-messages').fadeOut('slow',function(){
       $(this).remove();
     });
-  }, 3500);
+  }, 2000);
 
   var auto_refresh = setInterval(
     function (){
@@ -16,6 +16,6 @@ $(document).ready(function(){
   var auto_refresh_nav = setInterval(
     function (){
       $('.top-bar').load('/nav .top-bar').fadeIn("slow");
-    }, 3000
+    }, 1000
   );
 });

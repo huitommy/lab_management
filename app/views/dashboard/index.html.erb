@@ -1,12 +1,40 @@
-<div class="dashboard small-centered-column">
-  <h1>DashBoard</h1>
-  <h3>Activity feed</h3>
-  <div class="activity-feed columns">
-    <% @activities.each do |activity| %>
+<div class="row dashboard">
+  <h3>DashBoard <i class="fa fa-tachometer" aria-hidden="true"></i></h3>
+  <div class="callout small-6 columns">
+
+    <div class="callout recent">
+      <h4> <i class="fa fa-cart-plus" aria-hidden="true"></i> Recent orders <span id="view-all">(<%= link_to "View all", orders_path %>) </span> </h4>
+      <% @orders.each do |order| %>
+      <p>
+      <%= link_to "#{order.vendor.name}", order_path(order) %> created on <%= order.created_at.strftime('%m-%e-%y') %>
+        <% if order.ordered? %>
+        (Ordered)
+        <% else  %>
+        (Pending)
+        <% end %>
+      </p>
+      <% end %>
+    </div>
+
+    <div class="callout recent">
+      <h4><i class="fa fa-book" aria-hidden="true"></i> Recent protocols <span id="view-all">(<%= link_to "View all", protocols_path %>) </span> </h4>
+      <% @protocols.each do |protocol| %>
+      <p>
+        <%= link_to "#{protocol.name}", protocol_path(protocol) %> created on <%= protocol.created_at.strftime('%m-%e-%y') %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="callout small-6 columns activity">
+    <div class="activity-feed">
+      <h4> <i class="fa fa-rss" aria-hidden="true"></i> Recent Activity </h4>
+      <% @activities.each do |activity| %>
       <div class="feed-item">
-        <div class="date"> <%= activity.created_at.strftime('%m-%e-%y') %> </div>
+        <div class="date"> <%= activity.created_at.strftime('%m-%e-%y') %> <%= activity.created_at.localtime.strftime("at %I:%M%p") %> </div>
         <div class="text>"> <%= activity.owner.username%> <%= render_activity activity %> </div>
       </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
+
 </div>
