@@ -21,14 +21,17 @@
     color: $white;
     font-size: 20px;
   }
+  
   input#username {
     background: #fff url('username.png') 20px top no-repeat;
     background-size: 16px 80px;
   }
+
   input#password {
     background: #fff url('password.png') 20px top no-repeat;
     background-size: 16px 80px;
   }
+
   input {
     border: 1px solid #ccc;
     border-radius: 5px;

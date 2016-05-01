@@ -16,6 +16,6 @@ $(document).ready(function(){
   var auto_refresh_nav = setInterval(
     function (){
       $('.top-bar').load('/nav .top-bar').fadeIn("slow");
-    }, 10000
+    }, 1000
   );
 });
