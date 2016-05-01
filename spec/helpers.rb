@@ -1,8 +1,8 @@
 module Helpers
   def sign_in_as(user)
     visit new_user_session_path
-    fill_in 'Login', with: "#{user.username}"
-    fill_in 'Password', with: 'password'
+    fill_in 'username', with: "#{user.username}"
+    fill_in 'password', with: 'password'
     click_on 'Log in'
   end
 

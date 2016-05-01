@@ -5,9 +5,9 @@
   <p> User: <%= user.username %> </p>
   <p> Admin: <%= user.admin %> </p>
   <% if user.admin %>
-    <%= link_to "Remove admin status", admin_user_path(user), method: :patch %>
+    <p> <%= link_to "Remove admin status", admin_user_path(user), method: :patch %> </p>
   <% else %>
-    <%= link_to "Make admin", admin_user_path(user), method: :patch %>
+    <p> <%= link_to "Make admin", admin_user_path(user), method: :patch %> </p>
   <% end %>
 </div>
 <% end %>

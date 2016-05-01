@@ -5,7 +5,7 @@ $(document).ready(function(){
     $('#flash-messages').fadeOut('slow',function(){
       $(this).remove();
     });
-  }, 3500);
+  }, 2000);
 
   var auto_refresh = setInterval(
     function (){

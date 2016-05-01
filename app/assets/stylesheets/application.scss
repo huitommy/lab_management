@@ -13,71 +13,85 @@ $blue: #1a8cff;
 $topbar: #454545;
 $footer: #262626;
 $copyright: #0066cd;
+$background: #bfbfbf;
+$gray: #cccccc;
+$text-blue: #1682E6;
 
-// body{
-//   background-color: #e3e3e3;
-// }
+.page-wrap {
+  background-color: $background;
+}
 
-// notification button
 
-// a#notification {
-//   background-color: $red;
-//   color: $white;
-// }
+.login-block {
+  width: 500px;
+  padding: 20px;
+  background: $white;
+  border-radius: 5px;
+  border-top: 5px solid $topbar;
+  border-bottom: 5px solid $topbar;
+  margin: 1em auto;
+}
 
-//
-//
+.login-block h2 {
+  text-align: center;
+  color: #000;
+  font-size: 18px;
+  text-transform: uppercase;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
 
-//
-//
-// .menu-title{
-//   padding-top: 1em;
-// }
-//
-// .orders{
-//   text-align: center;
-//   font-size: 1em;
-// }
-//
-// label{
-//   font-size: 1em;
-// }
-//
-// #vendors-box {
-//   margin-top: 100px;
-//   padding: 0px;
-//   padding-bottom: 20px;
-//   h1 {
-//     background-color: $blue;
-//     color: white;
-//   }
-// }
-//
-//
-// #vendor-name {
-//   padding: 0px;
-//   h1 {
-//     background-color: $blue;
-//     color: white;
-//   }
-// }
-//
-// #vendors-show {
-//   text-align: center;
-//   padding: 1em;
-//   margin-top: 100px;
-// }
-//
-// #protocol-box {
-//   margin-top: 100px;
-//   padding: 0px;
-//   h3 {
-//     background-color: $blue;
-//     text-align: center;
-//     color: white;
-//   }
-// }
-//
-// #protocol-list {
-//   text-align: center;
-// }
+.login-block input {
+  width: 100%;
+  height: 42px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0 20px 0 50px;
+  outline: none;
+}
+
+.login-block input#username {
+  background: #fff url('username.png') 20px top no-repeat;
+  background-size: 16px 80px;
+}
+
+.login-block input#password {
+  background: #fff url('password.png') 20px top no-repeat;
+  background-size: 16px 80px;
+}
+.login-block input#password-confirmation {
+  background: #fff url('password.png') 20px top no-repeat;
+  background-size: 16px 80px;
+}
+.login-block input#email {
+  background: #fff url('username.png') 20px top no-repeat;
+  background-size: 16px 80px;
+}
+
+.login-block input:active, .login-block input:focus {
+  border: 1px solid $blue;
+}
+
+.login-block button {
+  width: 60%;
+  height: 40px;
+  background: #ff656c;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #e15960;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  outline: none;
+  cursor: pointer;
+}
+
+.login-block button:hover {
+  background: #ff7b81;
+}

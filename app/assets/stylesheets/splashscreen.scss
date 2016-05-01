@@ -6,16 +6,47 @@
 }
 
 #login-box{
-  position: relative;
-  left: 35%;
+  width: 350px;
+  margin-left: auto;
+  margin-right: auto;
   top: 25%;
+  position: relative;
+  text-align: center;
+  padding: 1em;
   background: rgba(0,0,0,0.7);
-  padding: 40px;
 }
 
 .labels {
   form label{
     color: $white;
-    font-size: 30px;
+    font-size: 20px;
   }
+}
+
+.labels input#username {
+  background: #fff url('username.png') 20px top no-repeat;
+  background-size: 16px 80px;
+}
+
+.labels input#password {
+  background: #fff url('password.png') 20px top no-repeat;
+  background-size: 16px 80px;
+}
+
+.labels input {
+  width: 100%;
+  height: 42px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  margin-bottom: 20px;
+  font-size: 14px;
+  font-family: 'Montserrat', sans-serif;
+  padding: 0 20px 0 50px;
+  outline: none;
+  font-weight: bold;
+}
+
+.labels input:active, .labels input:focus {
+  border: 2px solid $blue;
 }

@@ -6,11 +6,8 @@ feature 'User creates new order request', js: true do
     before(:each) do
       FactoryGirl.create(:vendor, name: 'vendor1')
       FactoryGirl.create(:vendor, name: 'vendor2')
-      FactoryGirl.create(:user, username: 'labtech', email: 'labtech@email.com', password: 'password')
-      visit new_user_session_path
-      fill_in 'Login', with: 'labtech@email.com'
-      fill_in 'Password', with: 'password'
-      click_on 'Log in'
+      user1 = FactoryGirl.create(:user, username: 'labtech', email: 'labtech@email.com', password: 'password')
+      sign_in_as(user1)
       click_on 'New Order Request'
     end
 

@@ -2,7 +2,7 @@
 
 .top-bar {
   padding: 0;
-  h3 {
+  h2 {
     font-family: 'Montserrat', sans-serif;
     color: white;
     padding-top: 0;
@@ -13,6 +13,11 @@
   }
 }
 
+#notification {
+  background-color: red;
+  color: $white;
+}
+
 .menu > li.menu-title > a {
   padding-bottom: 0em;
 }
@@ -20,8 +25,8 @@
 .topbar-links a {
   display: block;
   padding: 0.5rem;
-  margin-top: 0.5em;
+  margin-top: 1em;
   line-height: 1;
-  font-size: 20px;
-  color: $blue;
+  font-size: 17px;
+  color: $white;
 }
