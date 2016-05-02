@@ -1,10 +1,12 @@
-<h1> <%= @protocol.name %> </h1>
-<p>
-  <%=raw @protocol.procedure %>
-</p>
+<div class="callout small-centered columns">
+  <h1> <%= @protocol.name %> </h1>
+  <%= link_to "Return back to list of protocols", protocols_path %>
+  <p>
+    <%=raw @protocol.procedure %>
+  </p>
 
-<%= button_to "Edit", edit_protocol_path(@protocol), method: :get %>
-<%= button_to "Delete", protocol_path(@protocol), method: :delete, data: { confirm: "Are you sure you want to remove this protocol?" } %>
+  <%= button_to "Edit", edit_protocol_path(@protocol), method: :get %>
+  <%= button_to "Delete", protocol_path(@protocol), method: :delete, data: { confirm: "Are you sure you want to remove this protocol?" } %>
 
-<br />
-<%= link_to "Return back to list of protocols", protocols_path %>
+  <br />
+</div>
