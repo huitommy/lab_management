@@ -62,7 +62,7 @@ class OrdersController < PermissionsController
 
   def search
     @current_user = current_user
-    @orders = Order.search(params[:query]).order(ordered: :asc, created_at: :desc).paginate(page: params[:page], per_page: 20)
+    @orders = Order.search(params[:query]).paginate(page: params[:page], per_page: 20)
     if @orders.empty?
       flash[:alert] = "Sorry, but we couldn't find any orders matching '#{params[:query]}'"
     end
