@@ -1,52 +1,56 @@
-<h1> All Orders </h1>
+<div class="callout new-page">
+  <div class="small-centered columns">
+    <h1> All Orders </h1>
 
-<table border="1" style="width:100%" class="sortable stack hover">
-  <tr>
-    <th> Order #</th>
-    <th> Vendor </th>
-    <th> Requested by: </th>
-    <th> Total Price </th>
-    <th> Date Requested: </th>
-    <th> Order status:</th>
-    <th> PO #: </th>
-  </tr>
-  <div>
-    <% @orders.each do |order| %>
-    <tr>
-      <th> <%= order.id %> </th>
-      <th> <%= link_to "#{order.vendor.name}", order_path(order) %> </th>
-      <th> <%= order.user.username %> </th>
-      <% @total_price = 0 %>
-      <% order.items.each do |item| %>
-        <% @total_price += (item.quantity * item.price) %>
-      <% end %>
-      <th> $<%= '%.2f' %  @total_price %> </th>
-      <th> <%= order.created_at.strftime('%m-%e-%y')%> </th>
-      <% if order.ordered? %>
-        <th> Ordered</th>
-      <% else  %>
-        <th>
-          Pending
-        </th>
-      <% end %>
-
-      <th>
-        <% if @current_user.admin && !order.ordered? %>
-          <%= form_for order, url: complete_order_path(order) do |f| %>
-            <div class="medium-12 columns">
-               <%= f.label :po_number, "PO: " %>
-               <%= f.text_field :po_number %>
-               <div class="actions">
-                 <%= f.submit "Mark as ordered", method: :patch  %>
-               </div>
-            </div>
+    <table border="1" style="width:100%" class="sortable stack hover">
+      <tr>
+        <th> Order #</th>
+        <th> Vendor </th>
+        <th> Requested by: </th>
+        <th> Total Price </th>
+        <th> Date Requested: </th>
+        <th> Order status:</th>
+        <th> PO #: </th>
+      </tr>
+      <div>
+        <% @orders.each do |order| %>
+        <tr>
+          <th> <%= order.id %> </th>
+          <th> <%= link_to "#{order.vendor.name}", order_path(order) %> </th>
+          <th> <%= order.user.username %> </th>
+          <% @total_price = 0 %>
+          <% order.items.each do |item| %>
+            <% @total_price += (item.quantity * item.price) %>
           <% end %>
-        <% else %>
-          <%= order.po_number %>
-        <% end %>
+          <th> $<%= '%.2f' %  @total_price %> </th>
+          <th> <%= order.created_at.strftime('%m-%e-%y')%> </th>
+          <% if order.ordered? %>
+            <th> Ordered</th>
+          <% else  %>
+            <th>
+              Pending
+            </th>
+          <% end %>
 
-      </th>
-    </tr>
-    <% end %>
+          <th>
+            <% if @current_user.admin && !order.ordered? %>
+              <%= form_for order, url: complete_order_path(order) do |f| %>
+                <div class="medium-12 columns">
+                   <%= f.label :po_number, "PO: " %>
+                   <%= f.text_field :po_number %>
+                   <div class="actions">
+                     <%= f.submit "Mark as ordered", method: :patch  %>
+                   </div>
+                </div>
+              <% end %>
+            <% else %>
+              <%= order.po_number %>
+            <% end %>
+
+          </th>
+        </tr>
+        <% end %>
+      </div>
+    </table>
   </div>
-</table>
+</div>

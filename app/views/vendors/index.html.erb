@@ -1,5 +1,4 @@
-<div class="small-6 small-centered columns orders">
-  <div class="small-10 small-centered columns" >
+<div class="small-10 small-centered columns orders">
     <div class="callout", id="vendors-box">
 
     <h1>Vendors</h1>
@@ -8,7 +7,7 @@
       <p> <%= link_to vendor.name, vendor_path(vendor) %> </p>
     <% end %>
 
-    <%= button_to "Add a new vendor", new_vendor_path, method: :get %>
+    <%= button_to "Add a new vendor", new_vendor_path, method: :get, class:"button" %>
   </div>
   </div>
 </div>

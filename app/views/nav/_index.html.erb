@@ -30,6 +30,14 @@
               <li> <%= link_to "#{@notification.count} pending orders", orders_path, id:"notification"%> </li>
             <% end %>
 
+          <li> <%= link_to "Add Protocols", new_protocol_path %> </li>
+
+          <% if !Vendor.all.empty? %>
+            <li><%= link_to "New Order Request", new_order_path %></li>
+          <% end %>
+
+          <li><%= link_to "New Vendor", new_vendor_path %></li>
+
         <% else %>
           <li><%= link_to "Sign Up", new_user_registration_path %></li>
           <li><%= link_to "Sign In", new_user_session_path %></li>

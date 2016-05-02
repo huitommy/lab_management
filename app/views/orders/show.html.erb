@@ -1,73 +1,83 @@
-<h3>Order # <%= @order.id %> </h3>
-<h4> <%= @order.vendor.name %> </h4>
-<% if @access %>
-<%= button_to "Change Vendor", edit_order_path(@order), method: :get %>
-<%= button_to "Delete Order Request", order_path(@order), method: :delete, data: { confirm: "Are you sure you want to remove this order?" } %>
-<% end %>
+<div class="callout small-centered columns">
+  <%= link_to "Back to orders", orders_path %>
+  <h1>Order # <%= @order.id %> -
+    <% if @order.ordered? %>
+      Ordered
+    <% else  %>
+      Open Order
+    <% end %>
+  </h1>
+  <h2> <%= @order.vendor.name %> </h2>
 
-<ul>
-  <% @items.each_with_index do |item, index|%>
-    <li>Item# <%= index + 1 %></li>
-    <ul>
-      <li> <%= item.product_name %> </li>
-      <li> Cat # <%= item.cat_number %> </li>
-      <li> QTY: <%= item.quantity %> </li>
-      <li> Price: <%= '%.2f' % item.price %> </li>
-      <li> URL: <a href="<%= item.url %>"  target="_blank"><%= item.url %></a> </li>
-    </ul>
-    <% unless @order.ordered %>
-      <%= link_to "Edit Item", edit_item_path(item) %>
-      <%= link_to "Delete Item", item, method: :delete %>
+  <% unless @order.ordered %>
+    <% if @current_user.admin %>
+      <%= form_for @order, url: complete_order_path(@order) do |f| %>
+        <div class="small-6">
+          <%= f.label :po_number, "PO: " %>
+          <%= f.text_field :po_number %>
+          <div class="actions">
+            <%= f.submit "Mark as ordered", method: :patch, class:"success button"  %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+    <% if @access %>
+    <%= button_to "Change Vendor", edit_order_path(@order), method: :get, class:"button" %>
+    <%= button_to "Delete Order Request", order_path(@order), method: :delete, data: { confirm: "Are you sure you want to remove this order?" }, class:"alert button" %>
     <% end %>
   <% end %>
-</ul>
 
-<% unless @order.ordered %>
-  <%= form_for [@order, @item] do |f| %>
-    <div class="field">
-      <%= f.label :cat_number %><br>
-      <%= f.text_field :cat_number %>
+
+  <div class="callout item">
+    <% @items.each_with_index do |item, index|%>
+    <h4> Item# <%= index + 1 %> </h4>
+    <div class="callout item-details">
+      <p> Product: <%= item.product_name %> </p>
+      <p> Cat # <%= item.cat_number %> </p>
+      <p> QTY: <%= item.quantity %> </p>
+      <p> Price: <%= '%.2f' % item.price %> </p>
+      <p> URL: <a href="<%= item.url %>"  target="_blank"><%= item.url %></a> </p>
     </div>
+    <% unless @order.ordered %>
+    <%= link_to "Edit Item", edit_item_path(item), class:"button" %>
+    <p><%= link_to "Delete Item", item, method: :delete, class:"alert button" %> </p>
+    <% end %>
+    <% end %>
+  </div>
 
-    <div class="field">
-      <%= f.label :product_name %><br>
-      <%= f.text_field :product_name %>
-    </div>
-    <div class="field">
-      <%= f.label :quantity %><br>
-      <%= f.number_field :quantity %>
-    </div>
+  <% unless @order.ordered %>
+    <%= form_for [@order, @item] do |f| %>
+      <div class="field">
+        <%= f.label :cat_number %><br>
+        <%= f.text_field :cat_number %>
+      </div>
 
-    <div class="field">
-      <%= f.label :price %><br>
-      <%= f.number_field :price, step: 0.01 %>
-    </div>
+      <div class="field">
+        <%= f.label :product_name %><br>
+        <%= f.text_field :product_name %>
+      </div>
+      <div class="field">
+        <%= f.label :quantity %><br>
+        <%= f.number_field :quantity %>
+      </div>
 
-    <div class="field">
-      <%= f.label :url, "URL" %><br>
-      <%= f.url_field :url %>
-    </div>
+      <div class="field">
+        <%= f.label :price %><br>
+        <%= f.number_field :price, step: 0.01 %>
+      </div>
 
-    <div class="actions">
-      <%= f.submit "Add Item" %>
-    </div>
-  <% end %>
+      <div class="field">
+        <%= f.label :url, "URL" %><br>
+        <%= f.url_field :url %>
+      </div>
 
-  <br />
-
-  <% if @current_user.admin %>
-    <%= form_for @order, url: complete_order_path(@order) do |f| %>
-      <div class="row">
-         <%= f.label :po_number, "PO: " %>
-         <%= f.text_field :po_number %>
-         <div class="actions">
-           <%= f.submit "Mark as ordered", method: :patch  %>
-         </div>
+      <div class="actions">
+        <%= f.submit "Add Item" %>
       </div>
     <% end %>
+
+    <br />
+
   <% end %>
-
-<% end %>
-
-
-<%= link_to "Back to orders", orders_path %>
+</div>

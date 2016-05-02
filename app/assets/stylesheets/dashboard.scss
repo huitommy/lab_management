@@ -5,7 +5,7 @@
   text-align: center;
   margin-top: 20px;
   border: none;
-  background: #e6e6e6;
+  background: $light-gray;
   color: white;
   h3 {
     font-family: 'Montserrat', sans-serif;
@@ -15,7 +15,7 @@
 
 .callout.recent {
   border: none;
-  background: #e6e6e6;
+  background: $light-gray;
   h4 {
     border-bottom: 1px solid rgba(51, 51, 51, 0.2);
   }
@@ -31,14 +31,14 @@ span#view-all {
   text-align: left;
   margin-top: 1em;
   border: none;
-  background: #e6e6e6;
+  background: $light-gray;
 }
 
 .callout.small-6.columns.activity {
   border: none;
   margin-top: 16px;
   padding-top: 0px;
-  background: #e6e6e6;
+  background: $light-gray;
   h4 {
     border-bottom: 1px solid rgba(51, 51, 51, 0.2);
   }

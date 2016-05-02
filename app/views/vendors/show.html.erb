@@ -1,25 +1,23 @@
-<div class="small-12 columns" %>
-  <div class="small-6 small-centered columns" >
-    <div class="callout", id="vendors-show">
-      <div id="vendor-name">
-        <h1> <%= @vendor.name %> </h1>
-      </div>
-      <h3> Address: </h3>
-      <h4> <%= @vendor.address %> </h4>
-      <h4> <%= @vendor.city %>, <%= @vendor.state %> <%= @vendor.zipcode %> </h4>
-      <h3> Phone Number:</h3>
-      <h4> <%= @vendor.telephone %> </h4>
-      <h3> Website: </h3>
-      <h4> <a href="<%= @vendor.webpage %>"> <%= @vendor.webpage %> </a> </h4>
+<div class="small-10 small-centered columns" >
+  <div class="callout", id="vendors-show">
+    <div id="vendor-name">
+      <h1> <%= @vendor.name %> </h1>
+    </div>
+    <h3> Address: </h3>
+    <h4> <%= @vendor.address %> </h4>
+    <h4> <%= @vendor.city %>, <%= @vendor.state %> <%= @vendor.zipcode %> </h4>
+    <h3> Phone Number:</h3>
+    <h4> <%= @vendor.telephone %> </h4>
+    <h3> Website: </h3>
+    <h4> <a href="<%= @vendor.webpage %>"> <%= @vendor.webpage %> </a> </h4>
 
-      <div class="small-centered columns button-group">
-        <%= button_to "Edit", edit_vendor_path(@vendor), method: :get, class:"button" %>
-        <%= button_to "Delete", vendor_path(@vendor), method: :delete, data: { confirm: "Are you sure you want to remove this vendor?" }, class:"alert button" %>
-      </div>
+    <div class="small-centered columns button-group">
+      <%= button_to "Edit", edit_vendor_path(@vendor), method: :get, class:"button" %>
+      <%= button_to "Delete", vendor_path(@vendor), method: :delete, data: { confirm: "Are you sure you want to remove this vendor?" }, class:"alert button" %>
+    </div>
 
-      <div class="row columns">
-        <%= link_to "Return back to list of vendors", vendors_path %>
-      </div>
+    <div class="row columns">
+      <%= link_to "Return back to list of vendors", vendors_path %>
     </div>
   </div>
 </div>

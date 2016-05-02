@@ -1,6 +1,11 @@
-<div class="row">
-  <h1>Add a new protocol</h1>
-</div>
-<div class="row">
-  <%= render 'form' %>
+<div class="callout new-protocol">
+  <div class="small-centered columns">
+    <div class="row">
+      <h1>Add a new protocol</h1>
+      <%= link_to "Return back to list of protocols", protocols_path %>
+    </div>
+    <div class="row">
+      <%= render 'form' %>
+    </div>
+  </div>
 </div>

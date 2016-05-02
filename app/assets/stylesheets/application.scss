@@ -16,6 +16,7 @@ $copyright: #0066cd;
 $background: #bfbfbf;
 $gray: #cccccc;
 $text-blue: #1682E6;
+$light-gray: #e6e6e6;
 
 .page-wrap {
   background-color: $background;
@@ -94,4 +95,55 @@ $text-blue: #1682E6;
 
 .login-block button:hover {
   background: #ff7b81;
+}
+
+.callout.new-page {
+  margin-top: 2em;
+  text-align: center;
+  background-color: $light-gray;
+  h1 {
+    font-family: 'Raleway', sans-serif;
+  }
+  label {
+    font-size: 20px;
+    text-align: left;
+  }
+  thead th {
+    text-align: center;
+  }
+}
+
+.callout.new-protocol {
+  text-align: center;
+  margin-top: 2em;
+  background-color: $light-gray;
+  label {
+    font-size: 20px;
+    text-align: left;
+  }
+  h1 {
+    font-family: 'Raleway', sans-serif;
+  }
+}
+
+#vendors-box.callout {
+  margin-top: 2em;
+  text-align: center;
+  background-color: $light-gray;
+  h1 {
+    font-family: 'Raleway', sans-serif;
+  }
+}
+
+#protocol-box.callout {
+  margin-top: 2em;
+  text-align: center;
+  background-color: $light-gray;
+  h1 {
+    font-family: 'Raleway', sans-serif;
+  }
+}
+
+.callout.item-details {
+  border: none;
 }
