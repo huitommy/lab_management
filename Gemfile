@@ -17,6 +17,7 @@ gem 'tinymce-rails'
 gem 'carrierwave'
 gem "fog"
 gem 'dotenv-rails'
+gem 'will_paginate'
 
 group :development, :test do
   gem 'byebug'

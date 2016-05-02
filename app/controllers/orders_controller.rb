@@ -4,7 +4,7 @@ class OrdersController < PermissionsController
   before_action :authenticate_user!
 
   def index
-    @orders = Order.all.order(ordered: :asc, created_at: :desc)
+    @orders = Order.all.order(ordered: :asc, created_at: :desc).paginate(page: params[:page], per_page: 20)
     @user = current_user
   end
 

@@ -27,24 +27,25 @@
     <%= button_to "Delete Order Request", order_path(@order), method: :delete, data: { confirm: "Are you sure you want to remove this order?" }, class:"alert button" %>
     <% end %>
   <% end %>
-
-
-  <div class="callout item">
-    <% @items.each_with_index do |item, index|%>
-    <h4> Item# <%= index + 1 %> </h4>
-    <div class="callout item-details">
-      <p> Product: <%= item.product_name %> </p>
-      <p> Cat # <%= item.cat_number %> </p>
-      <p> QTY: <%= item.quantity %> </p>
-      <p> Price: <%= '%.2f' % item.price %> </p>
-      <p> URL: <a href="<%= item.url %>"  target="_blank"><%= item.url %></a> </p>
+  
+  <% unless @order.items == [] %>
+    <div class="callout item">
+      <% @items.each_with_index do |item, index|%>
+      <h4> Item# <%= index + 1 %> </h4>
+      <div class="callout item-details">
+        <p> Product: <%= item.product_name %> </p>
+        <p> Cat # <%= item.cat_number %> </p>
+        <p> QTY: <%= item.quantity %> </p>
+        <p> Price: <%= '%.2f' % item.price %> </p>
+        <p> URL: <a href="<%= item.url %>"  target="_blank"><%= item.url %></a> </p>
+      </div>
+      <% unless @order.ordered %>
+      <%= link_to "Edit Item", edit_item_path(item), class:"button" %>
+      <p><%= link_to "Delete Item", item, method: :delete, class:"alert button" %> </p>
+      <% end %>
+      <% end %>
     </div>
-    <% unless @order.ordered %>
-    <%= link_to "Edit Item", edit_item_path(item), class:"button" %>
-    <p><%= link_to "Delete Item", item, method: :delete, class:"alert button" %> </p>
-    <% end %>
-    <% end %>
-  </div>
+  <% end %>
 
   <% unless @order.ordered %>
     <%= form_for [@order, @item] do |f| %>
