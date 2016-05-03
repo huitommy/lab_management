@@ -5,3 +5,4 @@ LabSolution allows users to fill out an order request form with all the necessar
 
 This is a lab management app for the lab that I used to work in. While working there, we often ran into problems with our orders, mainly because order requests were done through email. This app will expedite the ordering process for labs, allowing them to focus on their research.
 
+ Labsolutions is built in Ruby on Rails, utilizing Devise for account management, Carrierwave with AWS S3 for document upload, and TinyMCE for the text editor.
