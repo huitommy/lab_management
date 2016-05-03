@@ -5,8 +5,8 @@
     <%=raw @protocol.procedure %>
   </p>
 
-  <%= button_to "Edit", edit_protocol_path(@protocol), method: :get %>
-  <%= button_to "Delete", protocol_path(@protocol), method: :delete, data: { confirm: "Are you sure you want to remove this protocol?" } %>
+  <%= button_to "Edit", edit_protocol_path(@protocol), method: :get, class:"button" %>
+  <%= button_to "Delete", protocol_path(@protocol), method: :delete, data: { confirm: "Are you sure you want to remove this protocol?" }, class:"alert button" %>
 
   <br />
 </div>
