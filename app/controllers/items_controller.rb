@@ -47,6 +47,6 @@ class ItemsController < PermissionsController
   private
 
   def item_params
-    params.require(:item).permit(:order_id, :quantity, :cat_number, :url, :price, :product_name)
+    params.require(:item).permit(:order_id, :quantity, :cat_number, :url, :price, :product_name, :size)
   end
 end

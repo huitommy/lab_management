@@ -27,7 +27,7 @@
     <%= button_to "Delete Order Request", order_path(@order), method: :delete, data: { confirm: "Are you sure you want to remove this order?" }, class:"alert button" %>
     <% end %>
   <% end %>
-  
+
   <% unless @order.items == [] %>
     <div class="callout item">
       <% @items.each_with_index do |item, index|%>
@@ -37,7 +37,12 @@
         <p> Cat # <%= item.cat_number %> </p>
         <p> QTY: <%= item.quantity %> </p>
         <p> Price: <%= '%.2f' % item.price %> </p>
+        <% unless item.size == ""  %>
+          <p> Size: <%= item.size %></p>
+        <% end %>
+        <% unless item.url == ""  %>
         <p> URL: <a href="<%= item.url %>"  target="_blank"><%= item.url %></a> </p>
+        <% end %>
       </div>
       <% unless @order.ordered %>
       <%= link_to "Edit Item", edit_item_path(item), class:"button" %>
@@ -61,6 +66,11 @@
       <div class="field">
         <%= f.label :quantity %><br>
         <%= f.number_field :quantity %>
+      </div>
+
+      <div class="field">
+        <%= f.label :size %><br>
+        <%= f.text_field :size %>
       </div>
 
       <div class="field">

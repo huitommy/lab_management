@@ -38,6 +38,7 @@ ActiveRecord::Schema.define(version: 20160427145506) do
     t.integer "quantity",     null: false
     t.string  "cat_number",   null: false
     t.string  "url"
+    t.string  "size"
     t.decimal "price",        null: false
     t.string  "product_name", null: false
   end
