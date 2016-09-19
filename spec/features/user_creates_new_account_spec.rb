@@ -14,9 +14,7 @@ feature 'User creates a new account:', js: true do
     fill_in 'password-confirmation', with: 'password'
     click_on 'Sign up'
 
-    expect(page).to have_content('Welcome! You have signed up successfully.')
-    expect(page).to have_content('DashBoard')
-
+    expect(page).to have_content('A message with a confirmation link has been sent to your email address.')
   end
 
   scenario 'user attempts to use an username that already exists' do
