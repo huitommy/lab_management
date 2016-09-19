@@ -12,6 +12,7 @@ FactoryGirl.define do
     sequence(:username) { |n| "user#{n}" }
     sequence(:email) { |n| "email#{n}@email.com" }
     password "password"
+    confirmed_at Time.now
   end
 
   factory :vendor do
