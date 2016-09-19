@@ -7,5 +7,6 @@ class Item < ActiveRecord::Base
   validates :quantity, presence: true, numericality: { greater_than_or_equal_to: 1 }
   validates :cat_number, presence: true
   validates :price, presence: true
+  validates :size, presence: true
   validates :product_name, presence: true
 end

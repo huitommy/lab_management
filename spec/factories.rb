@@ -7,7 +7,7 @@ FactoryGirl.define do
     trackable nil
     trackable_type "MyString"
   end
-  
+
   factory :user do
     sequence(:username) { |n| "user#{n}" }
     sequence(:email) { |n| "email#{n}@email.com" }
@@ -34,6 +34,7 @@ FactoryGirl.define do
     cat_number 'ABC123'
     url "http://google.com"
     price "10"
+    size "20mL"
     product_name "test"
   end
 end

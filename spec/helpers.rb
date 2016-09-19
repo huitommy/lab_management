@@ -9,6 +9,7 @@ module Helpers
   def fill_in_order
     fill_in 'Cat number', with: 'ABC123'
     fill_in 'Product name', with: 'Test Product'
+    fill_in 'Size', with: '20mL'
     fill_in 'Quantity', with: '2'
     fill_in 'Price', with: '15.25'
     fill_in 'URL', with: 'http://www.google.com'
