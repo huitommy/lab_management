@@ -1,4 +1,4 @@
-class Item < ActiveRecord::Base
+class Item < ApplicationRecord
   include PublicActivity::Common
 
   belongs_to :order
