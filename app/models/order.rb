@@ -1,4 +1,4 @@
-class Order < ActiveRecord::Base
+class Order < ApplicationRecord
   include PublicActivity::Common
 
   belongs_to :vendor

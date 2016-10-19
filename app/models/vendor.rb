@@ -1,4 +1,4 @@
-class Vendor < ActiveRecord::Base
+class Vendor < ApplicationRecord
   has_many :orders
   has_many :users, through: :orders
 

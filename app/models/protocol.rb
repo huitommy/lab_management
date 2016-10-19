@@ -1,4 +1,4 @@
-class Protocol < ActiveRecord::Base
+class Protocol < ApplicationRecord
   include PublicActivity::Common
   mount_uploader :document, DocumentUploader
   belongs_to :user
