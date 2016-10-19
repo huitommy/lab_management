@@ -17,13 +17,4 @@ RSpec.configure do |config|
   config.infer_spec_type_from_file_location!
   config.filter_rails_from_backtrace!
   config.include Helpers
-
-  # config.before :each do
-  #   DatabaseCleaner.start
-  # end
-  # config.after :each do
-  #   DatabaseCleaner.clean
-  # end
 end
-
-# DatabaseCleaner.strategy = :truncation
